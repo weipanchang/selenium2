@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import re
+#import re, sys
 import xml.etree.ElementTree as ET
 import requests, urllib3, sys
 #from bs4 import BeautifulSoup
@@ -97,35 +97,50 @@ def click_max(driver):
     time.sleep(1)
     return None
 
-def input_date(driver, startDate, endDate ):
+def input_date(driver, startDate, endDate):
+    print "Input start date and end date"
     elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/span[2]/div/input[2]")
     endDate_default =  elm.get_attribute("value")
+
     endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
 
     elm = driver.find_element_by_name("startDate")
     startDate_default =  elm.get_attribute("value")
 
     startDate1 = time.strptime(startDate_default , "%m/%d/%Y")
-    startDate2 = time.strptime(startDate , "%m/%d/%Y")
+    if startDate == "":
+        startDate2 = startDate1
+    else:        
+        startDate2 = time.strptime(startDate , "%m/%d/%Y")
     if (startDate1 < startDate2) and (endDate1 > startDate2):
         print "Input startDate: " + startDate
         elm.clear()
         elm.send_keys(startDate)
+        
+    elif (startDate1 == startDate2) or (endDate1 == startDate2):
+        pass
     else:
         print "Out of data range! Will display maximum possible data range with using default date as input: " + startDate_default
-    time.sleep(5)
+        
+    time.sleep(2)
 
     elm = driver.find_element_by_name("endDate")
 
     endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
-    endDate2 = time.strptime(endDate , "%m/%d/%Y")
+    if endDate == "":
+        endDate2 = endDate1
+    else:
+        endDate2 = time.strptime(endDate , "%m/%d/%Y")
 
     if (endDate1 > endDate2) and (startDate1 < endDate2):
         print "Input endDate: " + endDate
         elm.clear()
         elm.send_keys(endDate)
+    elif (endDate1 == endDate2) or (startDate1 == endDate2):
+        pass
     else:
         print "Out of data range! Will display maximum possible data range with using default date as input: " + endDate_default
+
     time.sleep(5)
 
 def click_done(driver):
@@ -148,7 +163,7 @@ def click_download_link(driver):
     a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
     print "click at download link"
     a_elm.click()
-    time.sleep(10)
+    time.sleep(5)
     return None
 
 
