@@ -36,7 +36,7 @@ def init_firefox(downloadPath):
     desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
     desiredCapabilities['firefox_profile'] = profile.encoded
     driver = webdriver.Firefox(capabilities=desiredCapabilities)
-    driver.set_page_load_timeout(60)
+    driver.set_page_load_timeout(50)
     url = "https://finance.yahoo.com"
     try:
         driver.get(url)
@@ -52,21 +52,41 @@ def search_stock(driver, stock_name):
     stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
     stock_elm.send_keys(stock_name.upper())
     stock_elm.send_keys(Keys.RETURN)
-    stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
+#    stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
+
     time.sleep(5)
     return None
 
 def close_pop_up(driver):
-    try:
-
-        button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
+   try:
+#       button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
+        button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
+#       Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close
+#       H(18px) W(18px) Va(m)! close:h_Fill(white)! close:h_Stk(white)! Cur(p)
+#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
+#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
+#       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
         print "click at x button 2"
         button_elm.click()
         time.sleep(1)
-    except:
-        pass
-
-    return None
+   except:
+       pass
+    
+   try:
+        button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
+#       button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
+#       Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close
+#       H(18px) W(18px) Va(m)! close:h_Fill(white)! close:h_Stk(white)! Cur(p)
+#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
+#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
+#       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
+        print "click at x button 2"
+        button_elm.click()
+        time.sleep(1)
+   except:
+       pass
+    
+#    return None
 
 def click_historical_data(driver):
 
@@ -171,7 +191,8 @@ def main():
 
     downloadPath = '/home/wchang/Downloads/data'
 
-    get_stock_data = get_historical_data("fb",  downloadPath)
+    get_stock_data = get_historical_data("^NYA",  downloadPath)
+    get_stock_data = get_historical_data("^IXIC",  downloadPath)
 #    # get_stock_data = get_historical_data("cost",  downloadPath)
     # get_stock_data = get_historical_data("bby",  downloadPath)
 #    get_stock_data = get_historical_data("amd",  downloadPath)

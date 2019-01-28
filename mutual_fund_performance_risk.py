@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import re
 import xml.etree.ElementTree as ET
+import string
 #import urllib2
 import requests, urllib3, sys
-from bs4 import BeautifulSoup
-import unittest
+# from bs4 import BeautifulSoup
+# import unittest
 from selenium import webdriver
 #from selenium.webdriver.support.ui import WebDriverWait
 #from selenium.webdriver.support import expected_conditions as EC
@@ -71,7 +72,6 @@ class get_fund_data():
         print "click at Risk Button"
         elm.click()
         time.sleep(3)        
-#        print "locate Risk"
 
         file_write = open( downloadPath + "/risk/"+ fund + "_risk" + ".csv","w")
         line = ""
@@ -85,37 +85,44 @@ class get_fund_data():
         file_write.write(line)    
         file_write.close()
         
-        
+        print "Processing " + self.fund.upper() +" Annual Total Return (%) History"
+
+        elm = driver.find_element_by_xpath("//*[text()='Performance']")
+        print "click at Performance Button"
+        elm.click()
+        time.sleep(20)
+        print "locate Annual Total Return (%) History"
+
+        performance_elm = driver.find_elements_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[3]/div/div")
+#        print len(performance_elm)
+        line = ""
+        file_write = open( downloadPath + "/performance/"+ fund + "_performance" + ".csv","w")
+        for child_elm in performance_elm:
+            child_span_elm_list  = child_elm.find_elements_by_tag_name("span")
+            line = child_span_elm_list[0].text + "," + child_span_elm_list[2].text + "\n"
+#            print "line print", child_span_elm_list[0].text, child_span_elm_list[2].text
+            file_write.write(line)
+        file_write.close()
+        time.sleep(1)
+
         print "Processing " + self.fund.upper() +" Profile"
         profile_elm = driver.find_element_by_xpath("//*[text()='Profile']")
         print "click at profile Button"
         profile_elm.click()
-        time.sleep(3)
+        time.sleep(50)
 
         fund_name_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[1]/div[1]/div[1]/p[1]")
         fund_name =  fund_name_elm.text
-#        print fund_name
         
         inception = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[7]/span[2]/span").text
- #       print inception
-        
         img_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[1]/div[2]/div[3]")
         img_elm.click()
-        time.sleep(3)
+        time.sleep(10)
         img = img_elm.find_element_by_tag_name("img").get_attribute('src')
-
         style = map_catagory(int(img[-5]))
-#       print style
-        
         category = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[1]/span[2]").text
-#        print category
-        
         ytd_return = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[4]/span[2]").text
-#        print ytd_return
-
         yeld = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[5]/span[2]").text
-#        print yeld
-        
         line = ""       
         line = self.fund + "," + fund_name + "," + inception + ","  + style + "," + category + "," + ytd_return + "," + yeld + "\n"
         file_write = open( self.downloadPath + "/profile/" + self.fund + "_profile.csv","w")
@@ -123,52 +130,26 @@ class get_fund_data():
         file_write.write(line)
         file_write.close()
         time.sleep(1)        
-        
-        print "Processing " + self.fund.upper() +" Annual Total Return (%) History"
-        elm = driver.find_element_by_xpath("//*[text()='Performance']")
-        print "click at Performance Button"
-        elm.click()
-        time.sleep(3)
-        
-        print "locate Annual Total Return (%) History"
 
-        performance_elm = driver.find_elements_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[3]/div/div")
-        line = ""
-        file_write = open( downloadPath + "/performance/"+ fund + "_performance" + ".csv","w")
-        for child_elm in performance_elm[1:]:
-            child_span_elm_list  = child_elm.find_elements_by_tag_name("span")
-            line = child_span_elm_list[0].text + "," + child_span_elm_list[2].text + "," + style + "\n"
-            file_write.write(line)
-
-        file_write.close()
-        time.sleep(1)
-
-
-        
-        
-        
-        time.sleep(2)
         driver.quit()
 
 def main():
 
     downloadPath = '/home/wchang/Downloads/data'
-    # 
-    # group  = 'Large-Cap Growth'
-    # stock_list = ["veipx"]
-    # for i in stock_list:
-    #     get_stock_data = get_historical_data(i, group, downloadPath)    
-    # 
-    # group  = 'Large-Cap Blend'
-    # stock_list = ["nmulx", "vtcix", "jpdex"]
-    # for i in stock_list:
-    #     get_stock_data = get_historical_data(i, group, downloadPath)
     
-    group  = 'Large-Cap Value'
-    fund_list = ["vgstx"]
-    
-    for i in fund_list:
-        fund_data = get_fund_data(i, downloadPath)
+#    alpha_beta_list = list(string.ascii_uppercase)
+    alpha_beta_list = ["K"]
+    for a in alpha_beta_list:
+        with open(downloadPath + "/list/fund_list_" + a + ".csv", "r") as fr:
+            for line in fr:
+                line = line.split(",")
+                print line[0]
+                fund_data = get_fund_data(line[0], downloadPath)                
+                
+    # fund_list = ["vgstx"]
+    # 
+    # for i in fund_list:
+    #     fund_data = get_fund_data(i, downloadPath)
 
 if __name__ == "__main__":
     main()

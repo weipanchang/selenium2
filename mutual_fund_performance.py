@@ -22,10 +22,10 @@ from selenium import webdriver
 
 class get_historical_data():
 
-    def __init__(self, stock_name, group, downloadPath):
-#    def __init__(self, stock_name, downloadPath):
-        self.stock_name = stock_name
-        print "Get stock performance data: " + stock_name.upper() 
+    def __init__(self, fund_name, group, downloadPath):
+#    def __init__(self, fund_name, downloadPath):
+        self.fund_name = fund_name
+        print "Get fund performance data: " + fund_name.upper() 
         self.downloadPath = downloadPath
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.folderList", 2)
@@ -49,8 +49,8 @@ class get_historical_data():
         driver.set_page_load_timeout(30)    
 
 
-        url2 =  "https://finance.yahoo.com/quote/" + stock_name.upper() +"?p=" + stock_name.upper() + "&.tsrc=fin-srch"
-#        url2 =  "https://finance.yahoo.com/quote/" + stock_name.upper() +"/performance?p=" + stock_name.upper()
+        url2 =  "https://finance.yahoo.com/quote/" + fund_name.upper() +"?p=" + fund_name.upper() + "&.tsrc=fin-srch"
+#        url2 =  "https://finance.yahoo.com/quote/" + fund_name.upper() +"/performance?p=" + fund_name.upper()
         try:
             driver.get(url2)
         except TimeoutException:
@@ -60,11 +60,11 @@ class get_historical_data():
         time.sleep(10)
         
         # url = "https://finance.yahoo.com"       
-        # stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
-        # stock_elm.send_keys(stock_name.upper())
-        # stock_elm.send_keys(Keys.RETURN)        
+        # fund_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
+        # fund_elm.send_keys(fund_name.upper())
+        # fund_elm.send_keys(Keys.RETURN)        
 
-        print "Processing " + self.stock_name.upper() +" Annual Total Return (%) History"
+        print "Processing " + self.fund_name.upper() +" Annual Total Return (%) History"
         elm = driver.find_element_by_xpath("//*[text()='Performance']")
 #        elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[4]/section/div/ul/li[7]/a/span")
         print "click at Performance Button"
@@ -84,7 +84,7 @@ class get_historical_data():
         # /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[3]/div/div[2]/span[3]
 #        child_elms_list = performance_elm.find_elements_by_tag_name("span")
 
-        file_write = open( downloadPath + "/"+ stock_name + "_performance" + ".csv","w")
+        file_write = open( downloadPath + "/"+ fund_name + "_performance" + ".csv","w")
         for child_elm in performance_elm:
             child_span_elm_list  = child_elm.find_elements_by_tag_name("span")
             line = child_span_elm_list[0].text + "," + child_span_elm_list[2].text + "," + group + "\n"
@@ -102,20 +102,20 @@ def main():
     downloadPath = '/home/wchang/Downloads/data'
 
     group  = 'Large-Cap Growth'
-    stock_list = ["veipx"]
-    for i in stock_list:
-        get_stock_data = get_historical_data(i, group, downloadPath)    
+    fund_list = ["CCVIX"]
+    for i in fund_list:
+        get_fund_data = get_historical_data(i, group, downloadPath)    
 
-    group  = 'Large-Cap Blend'
-    stock_list = ["nmulx", "vtcix", "jpdex"]
-    for i in stock_list:
-        get_stock_data = get_historical_data(i, group, downloadPath)
+    # group  = 'Large-Cap Blend'
+    # fund_list = ["nmulx", "vtcix", "jpdex"]
+    # for i in fund_list:
+    #     get_fund_data = get_historical_data(i, group, downloadPath)
+    # 
+    # group  = 'Large-Cap Value'
+    # fund_list = ["bhbfx", "dodgx"]
     
-    group  = 'Large-Cap Value'
-    stock_list = ["bhbfx", "dodgx"]
-    
-    for i in stock_list:
-        get_stock_data = get_historical_data(i, group, downloadPath)
+    # for i in fund_list:
+    #     get_fund_data = get_historical_data(i, group, downloadPath)
 
 if __name__ == "__main__":
     main()

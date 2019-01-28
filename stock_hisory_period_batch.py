@@ -51,22 +51,28 @@ class get_historical_data():
         driver.set_page_load_timeout(60)    
         #url = "https://finance.yahoo.com/quote/" + stock_name + "?p=" + stock_name + "&.tsrc=fin-srch"
         url = "https://finance.yahoo.com"
-
+        url2 =  "https://finance.yahoo.com/quote/" + stock_name.upper() +"?p=" + stock_name.upper() + "&.tsrc=fin-srch"
         try:
-            driver.get(url)
+            driver.get(url2)
         except TimeoutException:
             pass
     
         print "Page is loaded"
 #        driver.maximize_window()
-        time.sleep(1)
+        time.sleep(10)
+        
+#         try:
+#             driver.get(url)
+#         except TimeoutException:
+#             pass
+#     
 #        //*[@id="search-button"]
 #        stock_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[1]/div[1]/div/div/div/div/div/div/div/div[2]/div/div[2]/form/table/tbody/tr/td[1]/div/div/div[1]/input")
-        stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
-        stock_elm.send_keys(stock_name.upper())
-        stock_elm.send_keys(Keys.RETURN)
+#        stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
+#        stock_elm.send_keys(stock_name.upper())
+#        stock_elm.send_keys(Keys.RETURN)
 #        stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
-        time.sleep(5)
+#        time.sleep(5)
         print "Processing " + self.stock_name.upper() +" stock history data"
 
         try:
@@ -77,7 +83,7 @@ class get_historical_data():
      #       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
      #       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
      #       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
-             print "click at x button 2"
+             print "click at x button "
              button_elm.click()
              time.sleep(1)
         except:
@@ -91,11 +97,11 @@ class get_historical_data():
      #       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
      #       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
      #       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
-             print "click at x button 2"
+             print "click at x button "
              button_elm.click()
              time.sleep(1)
-        except:
-            pass
+        except: 
+             pass
 
 #        elm = driver.find_element_by_xpath("//span[contains(text(), 'Historical Data')]")
 #        elm = elm = driver.find_element_by_xpath ("/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[4]/div/div/section/div/ul/li[9]/a/span[text()='Historical Data']")
@@ -109,7 +115,6 @@ class get_historical_data():
         while len_of_input_elm < 5:
             input_elm_lists = driver.find_elements_by_tag_name("input")
             len_of_input_elm = len(input_elm_lists)
-
         time.sleep(5)
         
         input_elm = input_elm_lists[4]
@@ -185,32 +190,7 @@ def main():
     endDate = '6/28/2017'
 #    stock_name = raw_input("Please enter the Stock Symbol:   ")
 #    get_stock_data = get_historical_data(stock_name, startDate, endDate, downloadPath)
-    get_stock_data = get_historical_data("amzn", startDate, endDate, downloadPath)
-    get_stock_data = get_historical_data("adbe", startDate, endDate, downloadPath)
-    get_stock_data = get_historical_data("aapl", startDate, endDate, downloadPath)
-#    get_stock_data = get_historical_data("goog", startDate, endDate, downloadPath)
- #   get_stock_data = get_historical_data("flws", startDate, endDate, downloadPath)
-#    stock_name = raw_input("Please enter the Stock Symbol:   ")
-    # while 1:
-    #     while 1:
-    #         try:
-    #             startDate = raw_input("Please enter the Start Date (mm/dd/yyyy):   ")
-    #             input_date = time.strptime(startDate, "%m/%d/%Y" )
-    #             break
-    #         except:
-    #             print "Invalid Date, please input again!" + '\n'
-    #     while 1:
-    #         try:
-    #             endDate = raw_input("Please enter the end Date (mm/dd/yyyy):   ")
-    #             input_date = time.strptime(endDate, "%m/%d/%Y" )
-    #             break
-    #         except:
-    #             print "Invalid Date, please input again!" + '\n'
-    #     if (time.strptime(startDate, "%m/%d/%Y" ) <= time.strptime(endDate, "%m/%d/%Y" )):
-    #         break
-    #     else:
-    #         print "'Start' date must be prior to 'End' date! Please Re-enter the Start Date and End Date" + '\n'
-    # get_stock_data = get_historical_data(stock_name, startDate, endDate, downloadPath)
-
+    get_stock_data = get_historical_data("VGSTX", startDate, endDate, downloadPath)
+#
 if __name__ == "__main__":
     main()

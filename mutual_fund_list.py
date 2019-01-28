@@ -65,7 +65,7 @@ class get_historical_data():
         
         symb_elm = elm.find_elements_by_class_name("quotelist-symb")
         name_elm = elm.find_elements_by_class_name("quotelist-name")
-        file_write = open( downloadPath + "/fund_list" + "_" + alpha_beta +".csv","w")
+        file_write = open( downloadPath + "/list/fund_list" + "_" + alpha_beta +".csv","w")
         for i in range(1, len(symb_elm)):
             symb = symb_elm[i].find_element_by_tag_name("a").text
             name = name_elm[i].find_element_by_tag_name("a").text
