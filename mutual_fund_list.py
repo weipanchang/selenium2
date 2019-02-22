@@ -11,6 +11,7 @@ from selenium import webdriver
 #from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 #from selenium.webdriver.firefox.options import Options
@@ -47,6 +48,7 @@ class get_historical_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         driver = webdriver.Firefox(capabilities=desiredCapabilities)
+#        driver.implicitly_wait(10)
         driver.set_page_load_timeout(70)    
 
         url =  "https://www.marketwatch.com/tools/mutual-fund/list/" + self.alpha_beta
@@ -65,7 +67,7 @@ class get_historical_data():
         
         symb_elm = elm.find_elements_by_class_name("quotelist-symb")
         name_elm = elm.find_elements_by_class_name("quotelist-name")
-        file_write = open( downloadPath + "/list/fund_list" + "_" + alpha_beta +".csv","w")
+        file_write = open( downloadPath + "/list/fund_list_" + alpha_beta +".csv","w")
         for i in range(1, len(symb_elm)):
             symb = symb_elm[i].find_element_by_tag_name("a").text
             name = name_elm[i].find_element_by_tag_name("a").text
@@ -82,8 +84,8 @@ def main():
 
     alpha_beta_list = list(string.ascii_uppercase)
     
-    for i in alpha_beta_list:
-        get_stock_data = get_historical_data(i, downloadPath)
+    for alpha in alpha_beta_list:
+        get_stock_data = get_historical_data(alpha, downloadPath)
 
 if __name__ == "__main__":
     main()

@@ -7,19 +7,32 @@ import requests, urllib3, sys
 # from bs4 import BeautifulSoup
 # import unittest
 from selenium import webdriver
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 #from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 
 #from selenium.webdriver.support.ui import WebDriverWait
 import time
-from bs4 import BeautifulSoup as bs
+# from bs4 import BeautifulSoup as bs
 from selenium import webdriver
+
+class wait_for_text_to_start_with(object):
+    def __init__(self, locator, text_):
+        self.locator = locator
+        self.text = text_
+
+    def __call__(self, driver):
+        try:
+            element_text = EC._find_element(driver, self.locator).text
+            return element_text.startswith(self.text)
+            
+        except StaleElementReferenceException:
+            return False
 
 class get_fund_data():
 
@@ -47,7 +60,8 @@ class get_fund_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         driver = webdriver.Firefox(capabilities=desiredCapabilities)
-        driver.set_page_load_timeout(30)    
+        driver.implicitly_wait(10)
+        driver.set_page_load_timeout(20)    
         def map_catagory(n):
             return ("Large-Cap Value" , "Large-Cap Blend", "Large-Cap Growth", "Mid-Cap Value", "Mid-Cap Blend", "Mid-Cap Growth", "Small-Cap Value", "Small-Cap Blend", "Small-Cap Growth")[n]
 
@@ -60,13 +74,15 @@ class get_fund_data():
         print "Page is loaded"
         time.sleep(3)
         
+#       Summary Section
+        print "click at Summary Button"        
         elm = driver.find_element_by_xpath("//*[text()='Summary']")
-        print "click at Summary Button"
         elm.click()
-        time.sleep(3)
-         
-        print "Processing " + self.fund.upper() +" risk information"                                     
+
+#       Risk Section
+        print "Processing " + self.fund.upper() +" risk information"  
         risk = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div[2]/div[1]/table/tbody/tr[7]/td[2]/span").text
+        time.sleep(3)
 
         elm = driver.find_element_by_xpath("//*[text()='Risk']")
         print "click at Risk Button"
@@ -86,40 +102,44 @@ class get_fund_data():
         file_write.close()
         
         print "Processing " + self.fund.upper() +" Annual Total Return (%) History"
-
-        elm = driver.find_element_by_xpath("//*[text()='Performance']")
         print "click at Performance Button"
+        
+        elm = driver.find_element_by_xpath("//*[text()='Performance']")
         elm.click()
-        time.sleep(20)
+        time.sleep(2)
         print "locate Annual Total Return (%) History"
 
+        WebDriverWait(driver, 5).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[3]/div/div[1]/span[4]/span'), "Category"))
         performance_elm = driver.find_elements_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[3]/div/div")
-#        print len(performance_elm)
         line = ""
         file_write = open( downloadPath + "/performance/"+ fund + "_performance" + ".csv","w")
         for child_elm in performance_elm:
             child_span_elm_list  = child_elm.find_elements_by_tag_name("span")
             line = child_span_elm_list[0].text + "," + child_span_elm_list[2].text + "\n"
-#            print "line print", child_span_elm_list[0].text, child_span_elm_list[2].text
             file_write.write(line)
         file_write.close()
         time.sleep(1)
-
+        
         print "Processing " + self.fund.upper() +" Profile"
-        profile_elm = driver.find_element_by_xpath("//*[text()='Profile']")
         print "click at profile Button"
+        profile_elm = driver.find_element_by_xpath("//*[text()='Profile']")
         profile_elm.click()
-        time.sleep(50)
-
+#        time.sleep(50)
+        
+        WebDriverWait(driver, 10).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/h3/span'), "Fund Overview"))
         fund_name_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[1]/div[1]/div[1]/p[1]")
         fund_name =  fund_name_elm.text
-        
+
         inception = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[7]/span[2]/span").text
         img_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[1]/div[2]/div[3]")
         img_elm.click()
-        time.sleep(10)
+        time.sleep(2)
+        
+        print "get fund summary"
+        print "get fund investment style."
         img = img_elm.find_element_by_tag_name("img").get_attribute('src')
         style = map_catagory(int(img[-5]))
+        
         category = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[1]/span[2]").text
         ytd_return = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[4]/span[2]").text
         yeld = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/div/div[5]/span[2]").text
@@ -143,6 +163,8 @@ def main():
         with open(downloadPath + "/list/fund_list_" + a + ".csv", "r") as fr:
             for line in fr:
                 line = line.split(",")
+                print ""
+                print "=============="
                 print line[0]
                 fund_data = get_fund_data(line[0], downloadPath)                
                 

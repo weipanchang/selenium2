@@ -9,11 +9,24 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 import time
-from bs4 import BeautifulSoup as bs
-from selenium import webdriver
+# from bs4 import BeautifulSoup as bs
 
+class wait_for_text_to_start_with(object):
+    def __init__(self, locator, text_):
+        self.locator = locator
+        self.text = text_
+
+    def __call__(self, driver):
+        try:
+            element_text = EC._find_element(driver, self.locator).text
+            return element_text.startswith(self.text)
+            
+        except StaleElementReferenceException:
+            return False
 
 def init_firefox(downloadPath):
 
@@ -36,7 +49,8 @@ def init_firefox(downloadPath):
     desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
     desiredCapabilities['firefox_profile'] = profile.encoded
     driver = webdriver.Firefox(capabilities=desiredCapabilities)
-    driver.set_page_load_timeout(50)
+    driver.implicitly_wait(10)
+    driver.set_page_load_timeout(20)
     url = "https://finance.yahoo.com"
     try:
         driver.get(url)
@@ -61,12 +75,7 @@ def close_pop_up(driver):
    try:
 #       button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
         button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
-#       Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close
-#       H(18px) W(18px) Va(m)! close:h_Fill(white)! close:h_Stk(white)! Cur(p)
-#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
-#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
-#       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
-        print "click at x button 2"
+        print "click at x button"
         button_elm.click()
         time.sleep(1)
    except:
@@ -74,22 +83,14 @@ def close_pop_up(driver):
     
    try:
         button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
-#       button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
-#       Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close
-#       H(18px) W(18px) Va(m)! close:h_Fill(white)! close:h_Stk(white)! Cur(p)
-#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg
-#       /html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[3]/div[2]/div[3]/div/div/button/svg/path
-#       .Z\(6\) > button:nth-child(3) > svg:nth-child(1)
-        print "click at x button 2"
+        print "click at x button"
         button_elm.click()
         time.sleep(1)
    except:
        pass
-    
-#    return None
 
 def click_historical_data(driver):
-
+    WebDriverWait(driver, 5).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[4]/section/div/ul/li[5]/a/span'), "Historical Data"))
     elm = driver.find_element_by_xpath("//span[contains(text(), 'Historical Data')]")
     print "click at Historical Data Button"
     elm.click()
