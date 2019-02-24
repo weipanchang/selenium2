@@ -4,20 +4,19 @@ import string
 import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
-#import unittest
+import unittest
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-#from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-#from selenium.common.exceptions import NoSuchElementException
-#from selenium.common.exceptions import NoSuchFrameException
-#from selenium.common.exceptions import StaleElementReferenceException
-#from selenium.common.exceptions import WebDriverException
-#from selenium.common.exceptions import NoAlertPresentException
-from selenium.common.exceptions import *
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchFrameException
+from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.remote.webdriver import WebElement
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
@@ -49,19 +48,7 @@ class visibility_of_element_located(object):
         try:
             return _element_if_visible(_find_element(driver, self.locator))
         except StaleElementReferenceException:
-            return False
-        
-class presence_of_element_located(object):
-    """ An expectation for checking that an element is present on the DOM
-    of a page. This does not necessarily mean that the element is visible.
-    locator - used to find the element
-    returns the WebElement once it is located
-    """
-    def __init__(self, locator):
-        self.locator = locator
-
-    def __call__(self, driver):
-        return _find_element(driver, self.locator)        
+            return False   
 
 def _element_if_visible(element, visibility=True):
     return element if element.is_displayed() == visibility else False
@@ -117,11 +104,9 @@ class get_historical_data():
             pass
         WebDriverWait(driver, 2).until(url_to_be(url))
         print "Page is loaded"
-
-        wait = WebDriverWait(driver, 20, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
-        elm = wait.until(presence_of_element_located((By.XPATH, "/html/body/div[2]/div[3]/div[2]/table/tbody")))
-#        WebDriverWait(driver, 10).until(visibility_of_element_located((By.XPATH, '/html/body/div[2]/div[3]/div[2]/table/tbody')))
-#        elm = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div[2]/table/tbody")
+#        time.sleep(5)
+        WebDriverWait(driver, 10).until(visibility_of_element_located((By.XPATH, '/html/body/div[2]/div[3]/div[2]/table/tbody')))
+        elm = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div[2]/table/tbody")
 #        time.sleep(5)
         symb_elm = elm.find_elements_by_class_name("quotelist-symb")
         name_elm = elm.find_elements_by_class_name("quotelist-name")

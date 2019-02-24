@@ -13,9 +13,69 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 #from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import *
 import time
 # from bs4 import BeautifulSoup as bs
 from selenium import webdriver
+
+class url_to_be(object):
+    """An expectation for checking the current url.
+    url is the expected url, which must be an exact match
+    returns True if the url matches, false otherwise."""
+    def __init__(self, url):
+        self.url = url
+
+    def __call__(self, driver):
+        return self.url == driver.current_url
+
+
+class visibility_of_element_located(object):
+    """ An expectation for checking that an element is present on the DOM of a
+    page and visible. Visibility means that the element is not only displayed
+    but also has a height and width that is greater than 0.
+    locator - used to find the element
+    returns the WebElement once it is located and visible
+    """
+    def __init__(self, locator):
+        self.locator = locator
+
+    def __call__(self, driver):
+        try:
+            return _element_if_visible(_find_element(driver, self.locator))
+        except StaleElementReferenceException:
+            return False
+        
+class presence_of_element_located(object):
+    """ An expectation for checking that an element is present on the DOM
+    of a page. This does not necessarily mean that the element is visible.
+    locator - used to find the element
+    returns the WebElement once it is located
+    """
+    def __init__(self, locator):
+        self.locator = locator
+
+    def __call__(self, driver):
+        return _find_element(driver, self.locator)        
+
+def _element_if_visible(element, visibility=True):
+    return element if element.is_displayed() == visibility else False
+
+def _find_elements(driver, by):
+    try:
+        return driver.find_elements(*by)
+    except WebDriverException as e:
+        raise e
+def _find_element(driver, by):
+    """Looks up an element. Logs and re-raises ``WebDriverException``
+    if thrown."""
+    try:
+        return driver.find_element(*by)
+    except NoSuchElementException as e:
+        raise e
+    except WebDriverException as e:
+        raise e
+
+
 
 class wait_for_text_to_start_with(object):
     def __init__(self, locator, text_):
@@ -63,6 +123,7 @@ class get_historical_data():
         driver = webdriver.Firefox(capabilities=desiredCapabilities)
         driver.implicitly_wait(10) # seconds
         driver.set_page_load_timeout(10)    
+        wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
 #        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
         url = "https://finance.yahoo.com"
         try:
@@ -71,13 +132,16 @@ class get_historical_data():
             pass
     
         print "Page is loaded"
-#        time.sleep(1)
-        stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
+        time.sleep(1)
+
+        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
+
+#        stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
         
         stock_elm.send_keys(stock_name.upper())
         stock_elm.send_keys(Keys.RETURN)
-        stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
-        time.sleep(5)
+#        stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
+#        time.sleep(5)
 #        print "Processing " + self.stock_name.upper() +" stock history data"    
 #       close buy sell dialog box if presented
     
@@ -98,13 +162,19 @@ class get_historical_data():
             time.sleep(1)
 #           break
         except:
-            pass            
-
-        WebDriverWait(driver, 10).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[4]/section/div/ul/li[5]/a/span'), "Historical Data"))
-        elm = driver.find_element_by_xpath("//span[contains(text(), 'Historical Data')]")    
+            pass
+        
+        
         print "click at Historical Data Button"
-        elm.click()
-        time.sleep(5)
+        try:
+            elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
+        except TimeoutException:
+            pass
+        
+#        WebDriverWait(driver, 90).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/section/div/ul/li[5]/a/span'), "Historical Data"))
+#        elm = driver.find_element_by_xpath("//span[contains(text(), 'Historical Data')]")    
+        
+        time.sleep(1)
         len_of_input_elm = 0
 
         while len_of_input_elm < 5:

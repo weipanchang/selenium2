@@ -18,6 +18,7 @@ def main():
 
     import stock_history_function
     downloadPath = '/home/wchang/Downloads/data'
+#    wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
     driver = stock_history_function.init_firefox(downloadPath)
     if len(sys.argv) == 2:
         stock_name = sys.argv[1]
@@ -54,12 +55,13 @@ def main():
     print ""
     print "Processing " + stock_name.upper() + " ........"
     print ""
-
-    stock_history_function.search_stock(driver, stock_name)
-    time.sleep(5)
+    wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
+    stock_history_function.search_stock(driver, stock_name, wait)
+    time.sleep(1)
     stock_history_function.close_pop_up(driver)
-    time.sleep(5)
-    stock_history_function.click_historical_data(driver)
+    time.sleep(1)
+    
+    stock_history_function.click_historical_data(driver, wait)
     stock_history_function.click_time_period(driver)
     stock_history_function.click_max(driver)
     if len(sys.argv) == 1:

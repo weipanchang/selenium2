@@ -101,6 +101,7 @@ class get_fund_data():
         file_write.write(line)    
         file_write.close()
         
+#       Performance Section        
         print "Processing " + self.fund.upper() +" Annual Total Return (%) History"
         print "click at Performance Button"
         
@@ -120,11 +121,11 @@ class get_fund_data():
         file_write.close()
         time.sleep(1)
         
+        #       Profile Section
         print "Processing " + self.fund.upper() +" Profile"
         print "click at profile Button"
         profile_elm = driver.find_element_by_xpath("//*[text()='Profile']")
         profile_elm.click()
-#        time.sleep(50)
         
         WebDriverWait(driver, 10).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[2]/div[1]/h3/span'), "Fund Overview"))
         fund_name_elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/section/div[1]/div[1]/div[1]/p[1]")
@@ -135,6 +136,7 @@ class get_fund_data():
         img_elm.click()
         time.sleep(2)
         
+#       Summary Section        
         print "get fund summary"
         print "get fund investment style."
         img = img_elm.find_element_by_tag_name("img").get_attribute('src')
@@ -158,7 +160,7 @@ def main():
     downloadPath = '/home/wchang/Downloads/data'
     
 #    alpha_beta_list = list(string.ascii_uppercase)
-    alpha_beta_list = ["K"]
+    alpha_beta_list = ["Y"]
     for a in alpha_beta_list:
         with open(downloadPath + "/list/fund_list_" + a + ".csv", "r") as fr:
             for line in fr:
