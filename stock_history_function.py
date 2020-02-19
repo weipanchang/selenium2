@@ -2,7 +2,7 @@
 #import re, sys
 import xml.etree.ElementTree as ET
 import requests, urllib3, sys
-#from bs4 import BeautifulSoup
+
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -66,6 +66,7 @@ def _find_elements(driver, by):
         return driver.find_elements(*by)
     except WebDriverException as e:
         raise e
+
 def _find_element(driver, by):
     """Looks up an element. Logs and re-raises ``WebDriverException``
     if thrown."""
@@ -123,10 +124,6 @@ def init_firefox(downloadPath):
 
 def search_stock(driver, stock_name, wait):
 
-    # stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
-    # stock_elm.send_keys(stock_name.upper())
-    # stock_elm.send_keys(Keys.RETURN)
-#    stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
     try:
         url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
         driver.get(url1)
@@ -141,7 +138,7 @@ def search_stock(driver, stock_name, wait):
 
 def close_pop_up(driver):
    try:
-#       button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
+
         button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
         print "click at x button"
         button_elm.click()
@@ -158,27 +155,18 @@ def close_pop_up(driver):
        pass
 
 def click_historical_data(driver, wait):
-    # WebDriverWait(driver, 5).until(wait_for_text_to_start_with((By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[4]/section/div/ul/li[5]/a/span'), "Historical Data"))
-    # elm = driver.find_element_by_xpath("//span[contains(text(), 'Historical Data')]")
+
     print "click at Historical Data Button"
 
     try:
         elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
     except TimeoutException:
         pass
-    time.sleep(3) 
+    time.sleep(1) 
     return None
 
 def click_time_period(driver):
 
-    # len_of_input_elm = 0
-    # 
-    # while len_of_input_elm < 5:
-    #     input_elm_lists = driver.find_elements_by_tag_name("input")
-    #     len_of_input_elm = len(input_elm_lists)
-    # time.sleep(1)
-    # input_elm = input_elm_lists[4]
-    #class="C($linkColor) Fz(14px)"
     input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
     print "click at input button"
     input_elm.click()
@@ -186,7 +174,7 @@ def click_time_period(driver):
     return None
 
 def click_max(driver):
-   #/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/ul[2]/li[4]/button
+
     elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
     print "click at max"
     elm.click()
@@ -206,25 +194,12 @@ def get_max_period(driver):
     time.sleep(1)
     return [start_max, end_max]
 
-
 def input_date(driver, startDate, endDate, start_max, end_max):
     print "Input start date and end date"
     input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
     print "click at input button"
     input_elm.click()
-#    elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
-#    /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input
-#    endDate_default =  elm.get_attribute("value")
-#    datetime.today().strftime('%Y-%m-%d')**
-#    endDate1 = time.strptime(endDate_default , "yyyy-mm-dd")
 
-#    elm = driver.find_element_by_name("startDate")
-    # elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
-    # startDate_default =  elm.get_attribute("valuprint parse("01/02/1990")
-
-    # print startDate_default
-
-#    startDate1 = time.strptime(startDate, "yyyy-mm-dd")
     if startDate == "":
         startDate = start_max
     else:        
@@ -237,21 +212,23 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         print endDate
         
     if (startDate > start_max) and (end_max > startDate):
+
         print "Input startDate: " + startDate
         elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
-#        elm = driver.find_element_by_xpath("/html/bofrom selenium.webdriver.common.action_chains import ActionChainsdy/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
-#        elm = driver.find_element_by_name('startDate')
         elm.click()
         time.sleep(1)
         actions = ActionChains(driver)
         actions.send_keys(Keys.ENTER)
         actions.perform()
         time.sleep(2)
+
         elm.send_keys(Keys.ARROW_LEFT)
         elm.send_keys(Keys.ARROW_LEFT)
         elm.send_keys(Keys.ARROW_LEFT)
+
         startDateList = startDate.split("-")
-        print startDateList
+#        print startDateList
+
         actions = ActionChains(driver)
         actions.send_keys(startDateList[1])
         actions.perform()
@@ -259,13 +236,7 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         actions.perform()
         actions.send_keys(startDateList[0])
         actions.perform()
-        #elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
-        # elm.send_keys(startDateList[1])
-        # time.sleep(2)
-        # elm.send_keys(startDateList[2])
-#        elm.send_Keys(startDateList[0])
-        #elm.send_keys(startDate)
-        
+         
     elif (startDate == start_max) or (end_max == startDate):
         pass
     else:
@@ -273,38 +244,23 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         
     time.sleep(1)
 
-#    elm = driver.find_element_by_name("endDate")
-
-#    endDate_default =  elm.get_attribute("value")
-#    endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
-    # if endDate == "":
-    #     endDate = endDate_max
-    # else:
-    #     endDate = time.strptime(endDate , "%m/%d/%Y")
-
     if (end_max > endDate) and (start_max < endDate):
         print "Input endDate: " + endDate
         elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
-        # elm.clear()
-        # elm.send_keys(endDate)
         elm.click()
-        # elm.send_keys(Keys.ENTER)
-        # elm.send_keys(Keys.ARROW_LEFT)
-        # elm.send_keys(Keys.ARROW_LEFT)
-        # elm.send_keys(Keys.ARROW_LEFT)
-        # endDateList = endDate.split("-")
-        # print endDateList
-        # elm.send_keys(endDateList[1] + endDateList[2]  + endDateList[0])
         time.sleep(1)
+
         actions = ActionChains(driver)
         actions.send_keys(Keys.ENTER)
         actions.perform()
         time.sleep(2)
+
         elm.send_keys(Keys.ARROW_LEFT)
         elm.send_keys(Keys.ARROW_LEFT)
         elm.send_keys(Keys.ARROW_LEFT)
+
         endDateList = endDate.split("-")
-        print endDateList
+
         actions = ActionChains(driver)
         actions.send_keys(endDateList[1])
         actions.perform()
@@ -312,12 +268,11 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         actions.perform()
         actions.send_keys(endDateList[0])
         actions.perform()
+
     elif (endDate_max == endDate) or (startDate_max == endDate):
         pass
     else:
         print "Out of data range! Will display maximum possible data range with using default date as input: " + end_max
-
-
 
     time.sleep(5)
 
@@ -349,7 +304,7 @@ def main():
     downloadPath = '/home/wchang/Downloads/data'
     get_stock_data = get_historical_data("^NYA",  downloadPath)
     get_stock_data = get_historical_data("^IXIC",  downloadPath)
-#    # get_stock_data = get_historical_data("cost",  downloadPath)
+    # get_stock_data = get_historical_data("cost",  downloadPath)
     # get_stock_data = get_historical_data("bby",  downloadPath)
 #    get_stock_data = get_historical_data("amd",  downloadPath)
     # get_stock_data = get_historical_data("box",  downloadPath)

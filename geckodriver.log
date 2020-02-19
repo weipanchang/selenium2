@@ -1,0 +1,1030 @@
+1582096747187	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilew1QM0A"
+1582096748100	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582096748122	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582096748122	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582096748123	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582096748123	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582096749512	Marionette	INFO	Listening on port 41493
+1582096749626	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: Error: XMLHttpRequest timeout
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/DataUtility.a10a6c3626662de2c6b5.modern.js, line 1: TypeError: s[0] is undefined
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+JavaScript error: https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&lang=en-US&ypv=prod, line 13: TypeError: Not in fullscreen mode
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/380072/42618662/skeleton.js, line 966: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://static.adsafeprotected.com/main.19.8.50.js, line 127: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/380072/42618662/skeleton.js, line 966: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://static.adsafeprotected.com/main.19.8.50.js, line 127: NS_ERROR_NOT_INITIALIZED: 
+1582096828810	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1582096830372	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096830396	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832444	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096832446	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832450	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832452	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832463	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096832464	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832468	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832471	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832478	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832479	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832485	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832487	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832503	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096832512	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832517	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832517	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832526	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832527	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832531	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832533	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832544	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832545	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832549	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832551	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832563	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832564	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832569	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096832569	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096834831	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096834832	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836893	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096836898	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836901	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836902	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836916	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096836917	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836919	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836921	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836927	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836928	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836932	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836932	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836947	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:850:16
+dispatch/</req<@chrome://marionette/content/listener.js:527:14
+dispatch/<@chrome://marionette/content/listener.js:520:15
+1582096836948	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836952	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836953	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836958	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836963	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836967	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836967	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836972	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836979	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836985	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836985	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096836998	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096837000	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096837003	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1582096837008	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+Sleep@chrome://marionette/content/sync.js:282:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/380072/42618606/skeleton.js, line 966: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://static.adsafeprotected.com/main.19.8.50.js, line 127: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/380072/42618662/skeleton.js, line 966: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://static.adsafeprotected.com/main.19.8.50.js, line 127: NS_ERROR_NOT_INITIALIZED: 
+1582096865876	Marionette	INFO	Stopped listening on port 41493
+1582097577136	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNvYkwP"
+1582097578023	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582097578043	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582097578044	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582097578044	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582097578044	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582097579547	Marionette	INFO	Listening on port 43765
+1582097579582	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1582097763801	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefhc42h"
+1582097764742	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582097764763	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582097764763	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582097764763	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582097764763	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582097766285	Marionette	INFO	Listening on port 41439
+1582097766353	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+JavaScript error: https://code.createjs.com/createjs-2015.11.26.min.js, line 13: NS_ERROR_FAILURE: 
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1582144842985	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8QnvJ8"
+1582144843942	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582144843964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582144843964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582144843964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582144843964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582144845599	Marionette	INFO	Listening on port 38559
+1582144845665	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+1582144882758	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1582145073785	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile3gKDXs"
+1582145074542	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582145074574	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582145074574	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582145074575	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582145074575	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582145077482	Marionette	INFO	Listening on port 33259
+1582145077533	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1582145532175	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePfbid2"
+1582145532991	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582145533029	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582145533029	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582145533029	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582145533030	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582145535560	Marionette	INFO	Listening on port 34731
+1582145535596	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 55: Error: <!DOCTYPE html>
+<html lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Yahoo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <style>
+html {
+    height: 100%;
+}
+body {
+    background: #fafafc url(https://s.yimg.com/nn/img/sad-panda-201402200631.png) 50% 50%;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    font: 300 18px "helvetica neue", helvetica, verdana, tahoma, arial, sans-serif;
+}
+table {
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+}
+h1 {
+    font-size: 42px;
+    font-weight: 400;
+    color: #400090;
+}
+p {
+    color: #1A1A1A;
+}
+#message-1 {
+    font-weight: bold;
+    margin: 0;
+}
+#message-2 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    max-width: 17em;
+    _width: 17em;
+}
+#spanishContent {
+    display: none;
+}
+    </style>
+<script>
+  document.write('<img src="//geo.yahoo.com/b?s=1197757129&t='+new Date().getTime()+'&err_url='+encodeURIComponent(document.URL)+'&err=502&test='+encodeURIComponent('-')+'" width="0px" height="0px"/>');var beacon = new Image();beacon.src="//bcn.fp.yahoo.com/p?s=1197757129&t="+new Date().getTime()+"&err_url="+encodeURIComponent(document.URL)+"&err=502&test="+encodeURIComponent('-');
+</script>
+</head>
+<body>
+<!-- status code : 502 -->
+<!-- Server Connection Closed -->
+<!-- host machine: media-router-omega112.prod.media.gq1.yahoo.com -->
+<!-- timestamp: 1582145543.370 -->
+<!-- url: http://finance.media.yahoo.com:4080/_finance_doubledown/api/resource?bkt=fd-exp-wilson%2Cfd-wfhr-ga%2Cfd-strm-mab%2Cfdw-qsp-genstrm&crumb=lNcsNTFXZxF&device=desktop&feature=adsMigration%2CcanvassOffnet%2CccOnMute%2Cdebouncesearch100%2CdeferDarla%2CecmaModern%2CemptyServiceWorker%2CenableCMP%2CenableConsentData%2CenableTheming%2CenableNavFeatureCue%2CenableFeatureTours%2CenableFreeFinRichSearch%2CenableGuceJs%2CenableGuceJsOverlay%2CenablePremiumSingleCTA%2CenablePremiumScreeners%2CenablePrivacyUpdate%2CenableVideoURL%2CenableYahooSans%2CnewContentAttribution%2CnewLogo%2CoathPlayer%2Cpremium35%2CrelatedVideoFeature%2CreportReactMarkupDiff%2CthreeAmigos%2CwaferHeader%2CvideoNativePlaylist%2CenablePremiumFinancials%2CenableCCPAFooter%2Clivecoverage%2CdarlaFirstRenderingVisible%2CenableTradeit%2CenableFeatureBar%2CenableSearchEnhancement%2CenableUserSentiment%2CenableBankrateWidget%2CncpHpStream%2Cload6Items%2CcanvassReplies%2CresearchFilter%2CenableSingleRail%2CenhanceAddToWL%2CsponsoredAds%2CenableStageAds%2CenableTradeItLinkBrokerSecondaryPromo%2CpremiumPromoHeader%2CenableQspPremiumPromoSmall%2CclientDelayNone%2CthreeAmigosMabEnabled%2CthreeAmigosAdsEnabledAndStreamIndex0%2CstreamBucketIdWilson%2CmabHpStream&intl=us&lang=en-US&partner=none&prid=bhd0ublf4r7vv&region=US&site=finance&tz=America%2FLos_Angeles&ver=0.102.3268-->
+<table>
+<tbody><tr>
+    <td>
+    <div id="englishContent">
+        <script type="text/javascript">
+        if (window.location.hostname=='att.yahoo.com'){
+            document.write('<img src="https://s1.yimg.com/rz/d/att_en-US_f_p_bestfit_2x.png" alt="AT&T">');
+        }else{
+            document.write('<img src="https://s.yimg.com/nn/img/yahoo-logo-201402200629.png" alt="Yahoo Logo">');
+        }    
+        </script> 
+        <h1 style="margin-top:20px;">Will be right back...</h1>
+        <p id="message-1">Thank you for your patience.</p>
+        <p id="message-2">Our engineers are working quickly to resolve the issue.</p>
+    </div>
+    <div id="spanishContent"> 
+        <img src="https://s1.yimg.com/rz/d/att_es-US_f_p_bestfit_2x.png" alt="AT&T En Vivo" style="max-width:310px">
+        <h1 style="margin-top:20px;">Volvemos enseguida…</h1>
+        <p id="message-1">Gracias por tu paciencia.</p>
+        <p id="message-2">Nuestros ingenieros están trabajando rápidamente para resolver el problema.</p>
+    </div>
+    <script type="text/javascript">
+    if (window.location.hostname=='espanol.att.yahoo.com'){
+        document.getElementById('englishContent').style.display = 'none';
+        document.getElementById('spanishContent').style.display = 'block';
+    }   
+    </script>
+    </td>
+</tr>
+</tbody></table>
+
+
+</body></html>
+
+JavaScript error: https://www.wsoddata.com/creatives/4faf701c/ads/Converted_Ads_2019/1021/0commissions_nooffer_freestocktrading_120x60/TDA_0_Commission_120x60.js?1571066393491, line 530: TypeError: self.cta is undefined
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:502:26\ngetGrids@resource://devtools/server/actors/layout.js:507:43\ngetGrids@resource://devtools/server/actors/layout.js:507:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/debugger-server-connection.js:380:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1582145625589	Marionette	INFO	Stopped listening on port 34731
+1582145673736	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4B9ngO"
+1582145674713	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582145674735	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582145674735	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582145674735	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582145674735	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582145676430	Marionette	INFO	Listening on port 40075
+1582145676455	Marionette	WARN	TLS certificate errors will be ignored for this session
+1582145684945	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript error: https://s.update.adsrvr.org/2/4.56.0/main.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1582145721416	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9dN3lv"
+1582145722447	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582145722468	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582145722468	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582145722468	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582145722468	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582145724127	Marionette	INFO	Listening on port 40213
+1582145724165	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.wsoddata.com/creatives/4faf701c/ads/Converted_Ads_2019/1021/0commissions_nooffer_freestocktrading_120x60/TDA_0_Commission_120x60.js?1571066393491, line 530: TypeError: self.cta is undefined
+JavaScript error: https://www.wsoddata.com/creatives/4faf701c/ads/Converted_Ads_2019/1021/0commissions_nooffer_freestocktrading_120x60/TDA_0_Commission_120x60.js?1571066393491, line 530: TypeError: self.cta is undefined
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1582145900079	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejpMqG7"
+1582145900997	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582145901020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582145901020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582145901020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582145901020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582145902592	Marionette	INFO	Listening on port 45425
+1582145902654	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: Error: XMLHttpRequest timeout
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/DataUtility.a10a6c3626662de2c6b5.modern.js, line 1: TypeError: s[0] is undefined
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1582146756323	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewS2Olm"
+1582146757286	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582146757307	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582146757307	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582146757307	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582146757307	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582146758856	Marionette	INFO	Listening on port 37613
+1582146758964	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/td-app-finance.48f04a8443018dcb6871.modern.js, line 1: TypeError: a.push is not a function
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1582146804274	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejNfG1t"
+1582146805184	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582146805206	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582146805206	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582146805206	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582146805206	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582146806767	Marionette	INFO	Listening on port 35443
+1582146806808	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/380072/42618606/skeleton.js, line 966: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://static.adsafeprotected.com/main.19.8.50.js, line 127: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x690029,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1582147009066	Marionette	INFO	Stopped listening on port 35443
+1582147011613	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewNQt87"
+1582147012282	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147012303	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147012303	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147012303	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147012303	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147013827	Marionette	INFO	Listening on port 37793
+1582147013925	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: Error: XMLHttpRequest timeout
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/DataUtility.a10a6c3626662de2c6b5.modern.js, line 1: TypeError: s[0] is undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1582147264269	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileP5qGWU"
+1582147265233	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147265254	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147265254	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147265254	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147265254	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147266769	Marionette	INFO	Listening on port 42307
+1582147266827	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+1582147334792	Marionette	INFO	Stopped listening on port 42307
+1582147336583	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewhJ7Ar"
+1582147337505	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147337527	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147337527	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147337527	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147337527	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147339111	Marionette	INFO	Listening on port 42163
+1582147339205	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: Error: XMLHttpRequest timeout
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/DataUtility.a10a6c3626662de2c6b5.modern.js, line 1: TypeError: s[0] is undefined
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+1582147406823	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9mpFtH"
+1582147406872	Marionette	INFO	Stopped listening on port 42163
+1582147407698	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147407718	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147407718	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147407719	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147407719	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147409234	Marionette	INFO	Listening on port 45841
+1582147409294	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.87611c533a85fdc51e44.modern.js, line 34: Error: XMLHttpRequest timeout
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/DataUtility.a10a6c3626662de2c6b5.modern.js, line 1: TypeError: s[0] is undefined
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+1582147472215	Marionette	INFO	Stopped listening on port 45841
+1582147524493	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileq7XTjl"
+1582147525458	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147525479	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147525479	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147525479	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147525479	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147527025	Marionette	INFO	Listening on port 45099
+1582147527110	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.wsoddata.com/creatives/4faf701c/ads/Converted_Ads_2019/1021/0commissions_nooffer_freestocktrading_120x60/TDA_0_Commission_120x60.js?1571066393491, line 530: TypeError: self.cta is undefined
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1582147788419	Marionette	INFO	Stopped listening on port 45099
+1582147793440	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSsDQd6"
+1582147794343	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582147794364	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582147794364	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582147794364	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582147794365	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582147795977	Marionette	INFO	Listening on port 35289
+1582147796060	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200213/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://ad.wsodcdn.com/adview/madview-min-0.0.19-0.js, line 27: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+1582147858210	Marionette	INFO	Stopped listening on port 35289
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&gdpr=0&us_privacy=1YNN&geo=na&co=us, line 12: SecurityError: The operation is insecure.

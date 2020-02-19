@@ -3,7 +3,7 @@ import re
 import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
-from bs4 import BeautifulSoup
+#rom bs4 import BeautifulSoup
 import unittest
 from selenium import webdriver
 #from selenium.webdriver.support.ui import WebDriverWait
@@ -15,7 +15,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 #from selenium.webdriver.firefox.options import Options
 #from selenium.webdriver.support.ui import WebDriverWait
 import time
-from bs4 import BeautifulSoup as bs
+#rom bs4 import BeautifulSoup as bs
 from selenium import webdriver
 
 class get_historical_data():

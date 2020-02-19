@@ -134,12 +134,15 @@ class get_historical_data():
         print "Page is loaded"
         time.sleep(1)
 
-        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
+#        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
 
-#        stock_elm = driver.find_element_by_xpath("//input[@placeholder='Search for news, symbols or companies']")
+        stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
         
         stock_elm.send_keys(stock_name.upper())
-        stock_elm.send_keys(Keys.RETURN)
+        time.sleep(10)
+        search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
+        search_elm.click()
+#        stock_elm.send_keys(Keys.RETURN)
 #        stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
 #        time.sleep(5)
 #        print "Processing " + self.stock_name.upper() +" stock history data"    
@@ -177,28 +180,34 @@ class get_historical_data():
         time.sleep(1)
         len_of_input_elm = 0
 
-        while len_of_input_elm < 5:
-            input_elm_lists = driver.find_elements_by_tag_name("input")
-            len_of_input_elm = len(input_elm_lists)
-        time.sleep(1)
-        input_elm = input_elm_lists[4]
+        # while len_of_input_elm < 5:
+        #     input_elm_lists = driver.find_elements_by_tag_name("input")
+        #     len_of_input_elm = len(input_elm_lists)
+        # time.sleep(1)
+        # input_elm = input_elm_lists[4]
 #                         if input_elm.get_attribute("class") == "C(t) O(n):f Tsh($actionBlueTextShadow) Bd(n) Bgc(t) Fz(14px) Pos(r) T(-1px) Bd(n):f Bxsh(n):f Cur(p) W(190px)":
 
+        # print "click at input button"
+        # input_elm.click()
+        # time.sleep(1)
+        input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
         print "click at input button"
         input_elm.click()
         time.sleep(1)
-        
-        elm = driver.find_element_by_xpath("//div[@class='Ta(c) C($gray)']/span[@data-value='MAX']")
+                
+        elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
         print "click at max"
         elm.click()
         time.sleep(1)
+        elm= driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/button")
+        elm.click()
 #                    button_elm_lists = driver.find_elements_by_tag_name("button")
 #                    for button_elm in button_elm_lists:
-        button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)' ]")
-         #       if button_elm.get_attribute("class") == " Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)":
-        print "click at Done"
-        button_elm.click()
-        time.sleep(6)                
+        # button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)' ]")
+        #  #       if button_elm.get_attribute("class") == " Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)":
+        # print "click at Done"
+        # button_elm.click()
+        # time.sleep(6)                
 
         button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']")
         print "clikc at Apply"
@@ -216,16 +225,14 @@ def main():
 
     downloadPath = '/home/wchang/Downloads/data'
  
-    #get_stock_data = get_historical_data("amzn",  downloadPath)
-    #get_stock_data = get_historical_data("adbe",  downloadPath)
-    get_stock_data = get_historical_data("aapl",  downloadPath)
-    get_stock_data = get_historical_data("goog",  downloadPath)
-    get_stock_data = get_historical_data("wmt",  downloadPath)
-    get_stock_data = get_historical_data("amzn",  downloadPath)
-    get_stock_data = get_historical_data("qai",  downloadPath)
-    get_stock_data = get_historical_data("bby",  downloadPath)
-    get_stock_data = get_historical_data("amd",  downloadPath)
-    # get_stock_data = get_historical_data("box",  downloadPath)
+    # get_stock_data = get_historical_data("aapl",  downloadPath)
+    # get_stock_data = get_historical_data("goog",  downloadPath)
+    # get_stock_data = get_historical_data("wmt",  downloadPath)
+    # get_stock_data = get_historical_data("amzn",  downloadPath)
+    # get_stock_data = get_historical_data("qai",  downloadPath)
+    # get_stock_data = get_historical_data("bby",  downloadPath)
+    # get_stock_data = get_historical_data("amd",  downloadPath)
+    get_stock_data = get_historical_data("box",  downloadPath)
     # get_stock_data = get_historical_data("fb",  downloadPath)
     # get_stock_data = get_historical_data("smci",  downloadPath)      
 
