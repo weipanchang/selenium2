@@ -12,8 +12,11 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import *
+from selenium.webdriver.common.action_chains import ActionChains
+from dateutil.parser import parse
 
 import time
+import datetime
 # from bs4 import BeautifulSoup as bs
 
 class url_to_be(object):
@@ -114,7 +117,6 @@ def init_firefox(downloadPath):
         driver.get(url)
     except TimeoutException:
         pass
-
     print "Page is loaded"
     time.sleep(1)
     return driver
@@ -126,11 +128,14 @@ def search_stock(driver, stock_name, wait):
     # stock_elm.send_keys(Keys.RETURN)
 #    stock_search_elm = driver.find_element_by_xpath("//*[@id='search-button']")
     try:
-        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
-        stock_elm.send_keys(stock_name.upper())
-        stock_elm.send_keys(Keys.RETURN)
+        url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
+        driver.get(url1)
+        # stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
+        # stock_elm.send_keys(stock_name.upper())
+        # stock_elm.send_keys(Keys.RETURN)
     except TimeoutException:
         pass
+      
     time.sleep(1)
     return None
 
@@ -161,79 +166,164 @@ def click_historical_data(driver, wait):
         elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
     except TimeoutException:
         pass
+    time.sleep(3) 
     return None
 
 def click_time_period(driver):
 
-    len_of_input_elm = 0
-
-    while len_of_input_elm < 5:
-        input_elm_lists = driver.find_elements_by_tag_name("input")
-        len_of_input_elm = len(input_elm_lists)
-    time.sleep(1)
-    input_elm = input_elm_lists[4]
+    # len_of_input_elm = 0
+    # 
+    # while len_of_input_elm < 5:
+    #     input_elm_lists = driver.find_elements_by_tag_name("input")
+    #     len_of_input_elm = len(input_elm_lists)
+    # time.sleep(1)
+    # input_elm = input_elm_lists[4]
+    #class="C($linkColor) Fz(14px)"
+    input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
     print "click at input button"
     input_elm.click()
     time.sleep(1)
     return None
 
 def click_max(driver):
-    elm = driver.find_element_by_xpath("//div[@class='Ta(c) C($gray)']/span[@data-value='MAX']")
+   #/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/ul[2]/li[4]/button
+    elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
     print "click at max"
     elm.click()
     time.sleep(1)
+    elm= driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/button")
+    elm.click()
     return None
 
-def input_date(driver, startDate, endDate):
+def get_max_period(driver):
+    input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
+    print "fatch max period"
+    max_period = input_elm.text.encode('ascii','ignore')
+    print max_period
+    [start_max, end_max] = [str(parse(i))[:10] for i in max_period.split("-")]
+    print start_max
+    print end_max
+    time.sleep(1)
+    return [start_max, end_max]
+
+
+def input_date(driver, startDate, endDate, start_max, end_max):
     print "Input start date and end date"
-    elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/span[2]/div/input[2]")
-    endDate_default =  elm.get_attribute("value")
+    input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
+    print "click at input button"
+    input_elm.click()
+#    elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
+#    /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input
+#    endDate_default =  elm.get_attribute("value")
+#    datetime.today().strftime('%Y-%m-%d')**
+#    endDate1 = time.strptime(endDate_default , "yyyy-mm-dd")
 
-    endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
+#    elm = driver.find_element_by_name("startDate")
+    # elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
+    # startDate_default =  elm.get_attribute("valuprint parse("01/02/1990")
 
-    elm = driver.find_element_by_name("startDate")
-    startDate_default =  elm.get_attribute("value")
+    # print startDate_default
 
-    startDate1 = time.strptime(startDate_default , "%m/%d/%Y")
+#    startDate1 = time.strptime(startDate, "yyyy-mm-dd")
     if startDate == "":
-        startDate2 = startDate1
+        startDate = start_max
     else:        
-        startDate2 = time.strptime(startDate , "%m/%d/%Y")
-    if (startDate1 < startDate2) and (endDate1 > startDate2):
-        print "Input startDate: " + startDate
-        elm.clear()
-        elm.send_keys(startDate)
-        
-    elif (startDate1 == startDate2) or (endDate1 == startDate2):
-        pass
-    else:
-        print "Out of data range! Will display maximum possible data range with using default date as input: " + startDate_default
-        
-    time.sleep(2)
-
-    elm = driver.find_element_by_name("endDate")
-
-    endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
+        startDate = str(datetime.datetime.strptime(startDate, "%m/%d/%Y").date())
+        print startDate
     if endDate == "":
-        endDate2 = endDate1
+        endDate = end_max
     else:
-        endDate2 = time.strptime(endDate , "%m/%d/%Y")
-
-    if (endDate1 > endDate2) and (startDate1 < endDate2):
-        print "Input endDate: " + endDate
-        elm.clear()
-        elm.send_keys(endDate)
-    elif (endDate1 == endDate2) or (startDate1 == endDate2):
+        endDate = str(datetime.datetime.strptime(endDate, "%m/%d/%Y").date())
+        print endDate
+        
+    if (startDate > start_max) and (end_max > startDate):
+        print "Input startDate: " + startDate
+        elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
+#        elm = driver.find_element_by_xpath("/html/bofrom selenium.webdriver.common.action_chains import ActionChainsdy/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
+#        elm = driver.find_element_by_name('startDate')
+        elm.click()
+        time.sleep(1)
+        actions = ActionChains(driver)
+        actions.send_keys(Keys.ENTER)
+        actions.perform()
+        time.sleep(2)
+        elm.send_keys(Keys.ARROW_LEFT)
+        elm.send_keys(Keys.ARROW_LEFT)
+        elm.send_keys(Keys.ARROW_LEFT)
+        startDateList = startDate.split("-")
+        print startDateList
+        actions = ActionChains(driver)
+        actions.send_keys(startDateList[1])
+        actions.perform()
+        actions.send_keys(startDateList[2])
+        actions.perform()
+        actions.send_keys(startDateList[0])
+        actions.perform()
+        #elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[1]/input")
+        # elm.send_keys(startDateList[1])
+        # time.sleep(2)
+        # elm.send_keys(startDateList[2])
+#        elm.send_Keys(startDateList[0])
+        #elm.send_keys(startDate)
+        
+    elif (startDate == start_max) or (end_max == startDate):
         pass
     else:
-        print "Out of data range! Will display maximum possible data range with using default date as input: " + endDate_default
+        print "Out of data range! Will display maximum possible data range with using default date as input: " + start_max
+        
+    time.sleep(1)
+
+#    elm = driver.find_element_by_name("endDate")
+
+#    endDate_default =  elm.get_attribute("value")
+#    endDate1 = time.strptime(endDate_default , "%m/%d/%Y")
+    # if endDate == "":
+    #     endDate = endDate_max
+    # else:
+    #     endDate = time.strptime(endDate , "%m/%d/%Y")
+
+    if (end_max > endDate) and (start_max < endDate):
+        print "Input endDate: " + endDate
+        elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
+        # elm.clear()
+        # elm.send_keys(endDate)
+        elm.click()
+        # elm.send_keys(Keys.ENTER)
+        # elm.send_keys(Keys.ARROW_LEFT)
+        # elm.send_keys(Keys.ARROW_LEFT)
+        # elm.send_keys(Keys.ARROW_LEFT)
+        # endDateList = endDate.split("-")
+        # print endDateList
+        # elm.send_keys(endDateList[1] + endDateList[2]  + endDateList[0])
+        time.sleep(1)
+        actions = ActionChains(driver)
+        actions.send_keys(Keys.ENTER)
+        actions.perform()
+        time.sleep(2)
+        elm.send_keys(Keys.ARROW_LEFT)
+        elm.send_keys(Keys.ARROW_LEFT)
+        elm.send_keys(Keys.ARROW_LEFT)
+        endDateList = endDate.split("-")
+        print endDateList
+        actions = ActionChains(driver)
+        actions.send_keys(endDateList[1])
+        actions.perform()
+        actions.send_keys(endDateList[2])
+        actions.perform()
+        actions.send_keys(endDateList[0])
+        actions.perform()
+    elif (endDate_max == endDate) or (startDate_max == endDate):
+        pass
+    else:
+        print "Out of data range! Will display maximum possible data range with using default date as input: " + end_max
+
+
 
     time.sleep(5)
 
 def click_done(driver):
 
     button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)' ]")
-
     print "click at Done"
     button_elm.click()
     time.sleep(3)

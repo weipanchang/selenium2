@@ -10,7 +10,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
-from bs4 import BeautifulSoup as bs
+#from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from stock_history_function import *
 
@@ -64,8 +64,13 @@ def main():
     stock_history_function.click_historical_data(driver, wait)
     stock_history_function.click_time_period(driver)
     stock_history_function.click_max(driver)
-    if len(sys.argv) == 1:
-        stock_history_function.input_date(driver, startDate, endDate)
+
+    [start_max, end_max] = stock_history_function.get_max_period(driver)
+
+    if len(sys.argv) == 1 and startDate != "" and endDate !="":
+        if time.strptime(startDate, "%m/%d/%Y") > time.strptime(start_max, "%Y-%m-%d") \
+            or time.strptime(endDate, "%m/%d/%Y") < time.strptime(end_max, "%Y-%m-%d"):
+            stock_history_function.input_date(driver, startDate, endDate, start_max, end_max)
     stock_history_function.click_done(driver)
     stock_history_function.click_apply(driver)
     stock_history_function.click_download_link(driver)
