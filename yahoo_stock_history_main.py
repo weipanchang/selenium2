@@ -71,7 +71,7 @@ def main():
         if time.strptime(startDate, "%m/%d/%Y") > time.strptime(start_max, "%Y-%m-%d") \
             or time.strptime(endDate, "%m/%d/%Y") < time.strptime(end_max, "%Y-%m-%d"):
             stock_history_function.input_date(driver, startDate, endDate, start_max, end_max)
-    stock_history_function.click_done(driver)
+        stock_history_function.click_done(driver)
     stock_history_function.click_apply(driver)
     stock_history_function.click_download_link(driver)
     driver.quit()

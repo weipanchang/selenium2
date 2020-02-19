@@ -123,18 +123,21 @@ def init_firefox(downloadPath):
     return driver
 
 def search_stock(driver, stock_name, wait):
-
-    try:
-        url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
-        driver.get(url1)
-        # stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
-        # stock_elm.send_keys(stock_name.upper())
-        # stock_elm.send_keys(Keys.RETURN)
-    except TimeoutException:
-        pass
+   url = "https://finance.yahoo.com"
+   try:
+       driver.get(url)
+   except TimeoutException:
+       pass
+        # url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
+        # driver.get(url1)
+   stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")     
+   stock_elm.send_keys(stock_name.upper())
+   time.sleep(10)
+   search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
+   search_elm.click()
       
-    time.sleep(1)
-    return None
+   time.sleep(1)
+   return None
 
 def close_pop_up(driver):
    try:
