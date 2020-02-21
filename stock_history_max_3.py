@@ -126,7 +126,7 @@ class get_historical_data():
         wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
 #        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
  
-        
+        delay = 0
         while True:
             url = "https://finance.yahoo.com"
             try:
@@ -134,13 +134,20 @@ class get_historical_data():
             except TimeoutException:
                 pass
     
-            print "Page is loaded"
+            print "Yahoo finance Page is loaded"
+#            url1 = driver.get.current_url
             time.sleep(1)
             stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
             stock_elm.send_keys(stock_name.upper())
-            time.sleep(3)
-            if driver.current_url != "https://search.yahoo.com/web?fr=uh3_finance_vert":
+            time.sleep(2)
+            stock_elm.send_keys(Keys.ENTER)
+            time.sleep(delay + 1)
+ #           print str(stock_name.upper()), str(driver.current_url)
+            if stock_name.upper() in str(driver.current_url):
                 break
+            else:
+                print "Correct Page is not presented, will try it agein! "
+
 #        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
 
 #        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
@@ -166,7 +173,7 @@ class get_historical_data():
 #        print "found"
         # search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
         # search_elm.click()
-        stock_elm.send_keys(Keys.ENTER)
+#        stock_elm.send_keys(Keys.ENTER)
 
         try:
              button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
