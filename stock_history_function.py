@@ -113,46 +113,37 @@ def init_firefox(downloadPath):
     driver = webdriver.Firefox(capabilities=desiredCapabilities)
     driver.implicitly_wait(10)
     driver.set_page_load_timeout(20)
-    url = "https://finance.yahoo.com"
-    try:
-        driver.get(url)
-    except TimeoutException:
-        pass
-    print "Page is loaded"
-    time.sleep(1)
+    # url = "https://finance.yahoo.com"
+    # try:
+    #     driver.get(url)
+    # except TimeoutException:
+    #     pass
+    # print "Page is loaded"
+    # time.sleep(1)
     return driver
 
 def search_stock(driver, stock_name, wait):
-   url = "https://finance.yahoo.com"
-   try:
-       driver.get(url)
-   except TimeoutException:
-       pass
-        # url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
-        # driver.get(url1)
-   stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
-   
-#    browser = webdriver.Firefox()
-#    browser.get("url")
-#    delay = 5 # seconds
-# try:
-#     myElem = WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
-#     print "Page is ready!"
-# except TimeoutException:
-#     print "Loading took too much time!"
-#    
-#    
-#    
-   stock_elm.send_keys(stock_name.upper())
-   time.sleep(3)
-   stock_elm.click()
-   #a = ' srchresult="true"'
-#   stock_list_elm = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-id = 'search-assist-sugglst']")))
-   search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
-   search_elm.click()
-      
-   time.sleep(1)
-   return None
+   delay = 0
+   while True:
+       url = "https://finance.yahoo.com"
+       try:
+           driver.get(url)
+       except TimeoutException:
+           pass
+
+       print "Yahoo finance Page is loaded"
+
+       time.sleep(1)
+       stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+       stock_elm.send_keys(stock_name.upper())
+       time.sleep(2)
+       stock_elm.send_keys(Keys.ENTER)
+       time.sleep(delay + 1)
+#           print str(stock_name.upper()), str(driver.current_url)
+       if stock_name.upper() in str(driver.current_url):
+           break
+       else:
+           print "Correct Page is not presented, will try it agein! "
 
 def close_pop_up(driver):
    try:
