@@ -130,9 +130,24 @@ def search_stock(driver, stock_name, wait):
        pass
         # url1 = "https://finance.yahoo.com/quote/" + stock_name.upper() + "?p=" + stock_name.upper() + "&.tsrc=fin-srch"
         # driver.get(url1)
-   stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")     
+   stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+   
+#    browser = webdriver.Firefox()
+#    browser.get("url")
+#    delay = 5 # seconds
+# try:
+#     myElem = WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
+#     print "Page is ready!"
+# except TimeoutException:
+#     print "Loading took too much time!"
+#    
+#    
+#    
    stock_elm.send_keys(stock_name.upper())
-   time.sleep(10)
+   time.sleep(3)
+   stock_elm.click()
+   #a = ' srchresult="true"'
+#   stock_list_elm = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-id = 'search-assist-sugglst']")))
    search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
    search_elm.click()
       
@@ -178,11 +193,13 @@ def click_time_period(driver):
 
 def click_max(driver):
 
-    elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
+#    elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
+    elm =  driver.find_element_by_xpath("//span[contains(text(), 'Max')]")
     print "click at max"
     elm.click()
     time.sleep(1)
-    elm= driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/button")
+#    elm= driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/button")
+    elm =  driver.find_element_by_xpath("//span[contains(text(), 'Apply')]")
     elm.click()
     return None
 
@@ -298,7 +315,7 @@ def click_download_link(driver):
     a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
     print "click at download link"
     a_elm.click()
-    time.sleep(5)
+    time.sleep(2)
     return None
 
 
