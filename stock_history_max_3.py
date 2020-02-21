@@ -125,37 +125,48 @@ class get_historical_data():
         driver.set_page_load_timeout(10)    
         wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
 #        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
-        url = "https://finance.yahoo.com"
-        try:
-            driver.get(url)
-        except TimeoutException:
-            pass
+ 
+        
+        while True:
+            url = "https://finance.yahoo.com"
+            try:
+                driver.get(url)
+            except TimeoutException:
+                pass
     
-        print "Page is loaded"
-        time.sleep(3)
+            print "Page is loaded"
+            time.sleep(1)
+            stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+            stock_elm.send_keys(stock_name.upper())
+            time.sleep(3)
+            if driver.current_url != "https://search.yahoo.com/web?fr=uh3_finance_vert":
+                break
+#        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
 
 #        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
 
-        stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+
+#        stock_elm.click()
+#        time.sleep(1)
         
-        stock_elm.send_keys(stock_name.upper())
-        time.sleep(1)
-        stock_elm.click()
-        time.sleep(1)        
+#       https://search.yahoo.com/web?fr=uh3_finance_vert        
         # try:
         #     elm = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class= 'ab96c46b')]")))
         #     print "found"
         # except TimeoutException:
         #     print "not found"
         #     pass
-        while not EC.presence_of_element_located((By.XPATH, "//div[@class= 'ab96c46b')]")):
-            stock_elm.click()
-            print "Search list not found"
-            time.sleep(1)
+        # while not EC.presence_of_element_located((By.XPATH, "//div[@class= 'ab96c46b')]")):
+        #     stock_elm.click()
+        #     print "Search list not found"
+        #     stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+        #     stock_elm.send_keys(stock_name.upper())
+        #     time.sleep(3)
         
 #        print "found"
-        search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
-        search_elm.click()
+        # search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
+        # search_elm.click()
+        stock_elm.send_keys(Keys.ENTER)
 
         try:
              button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
@@ -183,7 +194,7 @@ class get_historical_data():
             pass
         
         time.sleep(1)
-        len_of_input_elm = 0
+#        len_of_input_elm = 0
 
 
         input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
@@ -217,13 +228,13 @@ def main():
     get_stock_data = get_historical_data("aapl",  downloadPath)
     get_stock_data = get_historical_data("goog",  downloadPath)
     get_stock_data = get_historical_data("ibm",  downloadPath)
-    # get_stock_data = get_historical_data("amzn",  downloadPath)
-    # get_stock_data = get_historical_data("qai",  downloadPath)
-    # get_stock_data = get_historical_data("bby",  downloadPath)
-    # get_stock_data = get_historical_data("amd",  downloadPath)
-    # get_stock_data = get_historical_data("box",  downloadPath)
-    # get_stock_data = get_historical_data("fb",  downloadPath)
-    # get_stock_data = get_historical_data("smci",  downloadPath)      
+    get_stock_data = get_historical_data("amzn",  downloadPath)
+    get_stock_data = get_historical_data("qai",  downloadPath)
+    get_stock_data = get_historical_data("bby",  downloadPath)
+    get_stock_data = get_historical_data("amd",  downloadPath)
+    get_stock_data = get_historical_data("box",  downloadPath)
+    get_stock_data = get_historical_data("fb",  downloadPath)
+    get_stock_data = get_historical_data("smci",  downloadPath)      
 
     # startDate = '6/28/2005'
     # endDate = '6/28/2018'
