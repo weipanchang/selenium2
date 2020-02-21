@@ -28,7 +28,6 @@ class url_to_be(object):
     def __call__(self, driver):
         return self.url == driver.current_url
 
-
 class visibility_of_element_located(object):
     """ An expectation for checking that an element is present on the DOM of a
     page and visible. Visibility means that the element is not only displayed
@@ -44,7 +43,7 @@ class visibility_of_element_located(object):
             return _element_if_visible(_find_element(driver, self.locator))
         except StaleElementReferenceException:
             return False
-        
+
 class presence_of_element_located(object):
     """ An expectation for checking that an element is present on the DOM
     of a page. This does not necessarily mean that the element is visible.
@@ -55,7 +54,7 @@ class presence_of_element_located(object):
         self.locator = locator
 
     def __call__(self, driver):
-        return _find_element(driver, self.locator)        
+        return _find_element(driver, self.locator)
 
 def _element_if_visible(element, visibility=True):
     return element if element.is_displayed() == visibility else False
@@ -75,8 +74,6 @@ def _find_element(driver, by):
     except WebDriverException as e:
         raise e
 
-
-
 class wait_for_text_to_start_with(object):
     def __init__(self, locator, text_):
         self.locator = locator
@@ -86,7 +83,7 @@ class wait_for_text_to_start_with(object):
         try:
             element_text = EC._find_element(driver, self.locator).text
             return element_text.startswith(self.text)
-            
+
         except StaleElementReferenceException:
             return False
 
@@ -122,10 +119,10 @@ class get_historical_data():
         desiredCapabilities['firefox_profile'] = profile.encoded
         driver = webdriver.Firefox(capabilities=desiredCapabilities)
         driver.implicitly_wait(10) # seconds
-        driver.set_page_load_timeout(10)    
+        driver.set_page_load_timeout(10)
         wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
 #        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
- 
+
         delay = 0
         while True:
             url = "https://finance.yahoo.com"
@@ -133,9 +130,9 @@ class get_historical_data():
                 driver.get(url)
             except TimeoutException:
                 pass
-    
+
             print "Yahoo finance Page is loaded"
-#            url1 = driver.get.current_url
+
             time.sleep(1)
             stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
             stock_elm.send_keys(stock_name.upper())
@@ -147,33 +144,6 @@ class get_historical_data():
                 break
             else:
                 print "Correct Page is not presented, will try it agein! "
-
-#        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
-
-#        stock_elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search for news, symbols or companies']")))
-
-
-#        stock_elm.click()
-#        time.sleep(1)
-        
-#       https://search.yahoo.com/web?fr=uh3_finance_vert        
-        # try:
-        #     elm = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class= 'ab96c46b')]")))
-        #     print "found"
-        # except TimeoutException:
-        #     print "not found"
-        #     pass
-        # while not EC.presence_of_element_located((By.XPATH, "//div[@class= 'ab96c46b')]")):
-        #     stock_elm.click()
-        #     print "Search list not found"
-        #     stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
-        #     stock_elm.send_keys(stock_name.upper())
-        #     time.sleep(3)
-        
-#        print "found"
-        # search_elm = driver.find_element_by_xpath("//*[@id='header-desktop-search-button']")
-        # search_elm.click()
-#        stock_elm.send_keys(Keys.ENTER)
 
         try:
              button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
@@ -192,23 +162,21 @@ class get_historical_data():
 #           break
         except:
             pass
-        
-        
+
+
         print "click at Historical Data Button"
         try:
             elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
         except TimeoutException:
             pass
-        
-        time.sleep(1)
-#        len_of_input_elm = 0
 
+        time.sleep(1)
 
         input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
         print "click at input button"
         input_elm.click()
         time.sleep(1)
-                
+
         elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
         print "click at max"
         elm.click()
@@ -231,7 +199,7 @@ class get_historical_data():
 def main():
 
     downloadPath = '/home/wchang/Downloads/data'
- 
+
     get_stock_data = get_historical_data("aapl",  downloadPath)
     get_stock_data = get_historical_data("goog",  downloadPath)
     get_stock_data = get_historical_data("ibm",  downloadPath)
@@ -241,14 +209,14 @@ def main():
     get_stock_data = get_historical_data("amd",  downloadPath)
     get_stock_data = get_historical_data("box",  downloadPath)
     get_stock_data = get_historical_data("fb",  downloadPath)
-    get_stock_data = get_historical_data("smci",  downloadPath)      
+    get_stock_data = get_historical_data("smci",  downloadPath)
 
     # startDate = '6/28/2005'
     # endDate = '6/28/2018'
     # get_stock_data = get_historical_data("amzn", startDate, endDate, downloadPath)
     # get_stock_data = get_historical_data("adbe", startDate, endDate, downloadPath)
     # get_stock_data = get_historical_data("aapl", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("goog", startDate, endDate, downloadPath)     
+    # get_stock_data = get_historical_data("goog", startDate, endDate, downloadPath)
 
 if __name__ == "__main__":
     main()
