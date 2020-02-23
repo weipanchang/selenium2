@@ -14,6 +14,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import *
+from selenium.webdriver.firefox.options import Options
 import time
 # from bs4 import BeautifulSoup as bs
 from selenium import webdriver
@@ -113,7 +114,10 @@ class get_historical_data():
         profile.set_preference("network.http.use-cache", False)
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
-        driver = webdriver.Firefox(capabilities=desiredCapabilities)
+        options = Options()
+        options.add_argument("--headless")
+
+        driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
         driver.implicitly_wait(10) # seconds
         driver.set_page_load_timeout(10)
         wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
