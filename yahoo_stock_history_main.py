@@ -16,10 +16,6 @@ from stock_history_function import *
 
 def main():
 
-    import stock_history_function
-    downloadPath = '/home/wchang/Downloads/data'
-#    wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
-    driver = stock_history_function.init_firefox(downloadPath)
     if len(sys.argv) == 2:
         stock_name = sys.argv[1]
 
@@ -51,7 +47,10 @@ def main():
                 else:
                     print "'Start' date must be prior to 'End' date! Please Re-enter the Start Date and End Date" + '\n'
             else: break
-    
+    import stock_history_function
+    downloadPath = '/home/wchang/Downloads/data'
+#    wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
+    driver = stock_history_function.init_firefox(downloadPath) 
     print ""
     print "Processing " + stock_name.upper() + " ........"
     print ""
