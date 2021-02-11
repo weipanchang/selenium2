@@ -134,11 +134,14 @@ def search_stock(driver, stock_name, wait):
        print "Yahoo finance Page is loaded"
 
        time.sleep(1)
-       stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
-       stock_elm.send_keys(stock_name.upper())
+#       stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+       stock_elm = driver.find_element_by_id('yfin-usr-qry')
+#       class="Bgc(t) Bd Bdrsbstart(2px)! Bdc(#b0b0b0) Bdendw(0) Bdrs(0) Bdrststart(2px)! Bxsh(n) Bxz(bb) D(b) Fz(15px) H(inh) M(0) O(0) Px(10px) W(100%) Bdc($c-fuji-blue-1-c):f Bdc(#949494):h finsrch-inpt"
+       stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
        time.sleep(2)
-       stock_elm.send_keys(Keys.ENTER)
-       time.sleep(delay + 1)
+#       stock_elm.send_keys(Keys.ENTER)
+#       time.sleep(delay + 1)
+#       print str(driver.current_url)
 #           print str(stock_name.upper()), str(driver.current_url)
        if stock_name.upper() in str(driver.current_url):
            break
@@ -279,6 +282,8 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         actions.perform()
         actions.send_keys(endDateList[0])
         actions.perform()
+        
+         
 
     elif (endDate_max == endDate) or (startDate_max == endDate):
         pass
@@ -289,14 +294,16 @@ def input_date(driver, startDate, endDate, start_max, end_max):
 
 def click_done(driver):
 
-    button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)' ]")
+    button_elm = driver.find_element(By.XPATH,'//span[text()="Done"]')
+    #button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($linkColor) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($linkActiveColor):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start) Op(0.3)' ]")
     print "click at Done"
     button_elm.click()
     time.sleep(3)
     return None
 
 def click_apply(driver):
-    button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']")
+    button_elm = driver.find_element(By.XPATH, '//span[text()="Apply"]')
+    #button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($linkColor) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($linkActiveColor):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']")
     print "clikc at Apply"
     button_elm.click()
     time.sleep(10)

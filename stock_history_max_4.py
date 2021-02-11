@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # import re
+"""
+Firefox version: 73.0 (64-bit)
+"""
 import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
@@ -19,74 +22,74 @@ import time
 # from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 
-class url_to_be(object):
-    """An expectation for checking the current url.
-    url is the expected url, which must be an exact match
-    returns True if the url matches, false otherwise."""
-    def __init__(self, url):
-        self.url = url
-
-    def __call__(self, driver):
-        return self.url == driver.current_url
-
-class visibility_of_element_located(object):
-    """ An expectation for checking that an element is present on the DOM of a
-    page and visible. Visibility means that the element is not only displayed
-    but also has a height and width that is greater than 0.
-    locator - used to find the element
-    returns the WebElement once it is located and visible
-    """
-    def __init__(self, locator):
-        self.locator = locator
-
-    def __call__(self, driver):
-        try:
-            return _element_if_visible(_find_element(driver, self.locator))
-        except StaleElementReferenceException:
-            return False
-
-class presence_of_element_located(object):
-    """ An expectation for checking that an element is present on the DOM
-    of a page. This does not necessarily mean that the element is visible.
-    locator - used to find the element
-    returns the WebElement once it is located
-    """
-    def __init__(self, locator):
-        self.locator = locator
-
-    def __call__(self, driver):
-        return _find_element(driver, self.locator)
-
-def _element_if_visible(element, visibility=True):
-    return element if element.is_displayed() == visibility else False
-
-def _find_elements(driver, by):
-    try:
-        return driver.find_elements(*by)
-    except WebDriverException as e:
-        raise e
-def _find_element(driver, by):
-    """Looks up an element. Logs and re-raises ``WebDriverException``
-    if thrown."""
-    try:
-        return driver.find_element(*by)
-    except NoSuchElementException as e:
-        raise e
-    except WebDriverException as e:
-        raise e
-
-class wait_for_text_to_start_with(object):
-    def __init__(self, locator, text_):
-        self.locator = locator
-        self.text = text_
-
-    def __call__(self, driver):
-        try:
-            element_text = EC._find_element(driver, self.locator).text
-            return element_text.startswith(self.text)
-
-        except StaleElementReferenceException:
-            return False
+# class url_to_be(object):
+#     """An expectation for checking the current url.
+#     url is the expected url, which must be an exact match
+#     returns True if the url matches, false otherwise."""
+#     def __init__(self, url):
+#         self.url = url
+# 
+#     def __call__(self, driver):
+#         return self.url == driver.current_url
+# 
+# class visibility_of_element_located(object):
+#     """ An expectation for checking that an element is present on the DOM of a
+#     page and visible. Visibility means that the element is not only displayed
+#     but also has a height and width that is greater than 0.
+#     locator - used to find the element
+#     returns the WebElement once it is located and visible
+#     """
+#     def __init__(self, locator):
+#         self.locator = locator
+# 
+#     def __call__(self, driver):
+#         try:
+#             return _element_if_visible(_find_element(driver, self.locator))
+#         except StaleElementReferenceException:
+#             return False
+# 
+# class presence_of_element_located(object):
+#     """ An expectation for checking that an element is present on the DOM
+#     of a page. This does not necessarily mean that the element is visible.
+#     locator - used to find the element
+#     returns the WebElement once it is located
+#     """
+#     def __init__(self, locator):
+#         self.locator = locator
+# 
+#     def __call__(self, driver):
+#         return _find_element(driver, self.locator)
+# 
+# def _element_if_visible(element, visibility=True):
+#     return element if element.is_displayed() == visibility else False
+# 
+# def _find_elements(driver, by):
+#     try:
+#         return driver.find_elements(*by)
+#     except WebDriverException as e:
+#         raise e
+# def _find_element(driver, by):
+#     """Looks up an element. Logs and re-raises ``WebDriverException``
+#     if thrown."""
+#     try:
+#         return driver.find_element(*by)
+#     except NoSuchElementException as e:
+#         raise e
+#     except WebDriverException as e:
+#         raise e
+# 
+# class wait_for_text_to_start_with(object):
+#     def __init__(self, locator, text_):
+#         self.locator = locator
+#         self.text = text_
+# 
+#     def __call__(self, driver):
+#         try:
+#             element_text = EC._find_element(driver, self.locator).text
+#             return element_text.startswith(self.text)
+# 
+#         except StaleElementReferenceException:
+#             return False
 
 class get_historical_data():
 

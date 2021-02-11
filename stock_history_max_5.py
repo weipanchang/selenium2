@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # import re
+"""
+Google Chromer version Version 80.0.3987.116 (Official Build) (64-bit)
+
+"""
 import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
@@ -18,74 +22,74 @@ import time
 # from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 
-class url_to_be(object):
-    """An expectation for checking the current url.
-    url is the expected url, which must be an exact match
-    returns True if the url matches, false otherwise."""
-    def __init__(self, url):
-        self.url = url
-
-    def __call__(self, driver):
-        return self.url == driver.current_url
-
-class visibility_of_element_located(object):
-    """ An expectation for checking that an element is present on the DOM of a
-    page and visible. Visibility means that the element is not only displayed
-    but also has a height and width that is greater than 0.
-    locator - used to find the element
-    returns the WebElement once it is located and visible
-    """
-    def __init__(self, locator):
-        self.locator = locator
-
-    def __call__(self, driver):
-        try:
-            return _element_if_visible(_find_element(driver, self.locator))
-        except StaleElementReferenceException:
-            return False
-
-class presence_of_element_located(object):
-    """ An expectation for checking that an element is present on the DOM
-    of a page. This does not necessarily mean that the element is visible.
-    locator - used to find the element
-    returns the WebElement once it is located
-    """
-    def __init__(self, locator):
-        self.locator = locator
-
-    def __call__(self, driver):
-        return _find_element(driver, self.locator)
-
-def _element_if_visible(element, visibility=True):
-    return element if element.is_displayed() == visibility else False
-
-def _find_elements(driver, by):
-    try:
-        return driver.find_elements(*by)
-    except WebDriverException as e:
-        raise e
-def _find_element(driver, by):
-    """Looks up an element. Logs and re-raises ``WebDriverException``
-    if thrown."""
-    try:
-        return driver.find_element(*by)
-    except NoSuchElementException as e:
-        raise e
-    except WebDriverException as e:
-        raise e
-
-class wait_for_text_to_start_with(object):
-    def __init__(self, locator, text_):
-        self.locator = locator
-        self.text = text_
-
-    def __call__(self, driver):
-        try:
-            element_text = EC._find_element(driver, self.locator).text
-            return element_text.startswith(self.text)
-
-        except StaleElementReferenceException:
-            return False
+# class url_to_be(object):
+#     """An expectation for checking the current url.
+#     url is the expected url, which must be an exact match
+#     returns True if the url matches, false otherwise."""
+#     def __init__(self, url):
+#         self.url = url
+# 
+#     def __call__(self, driver):
+#         return self.url == driver.current_url
+# 
+# class visibility_of_element_located(object):
+#     """ An expectation for checking that an element is present on the DOM of a
+#     page and visible. Visibility means that the element is not only displayed
+#     but also has a height and width that is greater than 0.
+#     locator - used to find the element
+#     returns the WebElement once it is located and visible
+#     """
+#     def __init__(self, locator):
+#         self.locator = locator
+# 
+#     def __call__(self, driver):
+#         try:
+#             return _element_if_visible(_find_element(driver, self.locator))
+#         except StaleElementReferenceException:
+#             return False
+# 
+# class presence_of_element_located(object):
+#     """ An expectation for checking that an element is present on the DOM
+#     of a page. This does not necessarily mean that the element is visible.
+#     locator - used to find the element
+#     returns the WebElement once it is located
+#     """
+#     def __init__(self, locator):
+#         self.locator = locator
+# 
+#     def __call__(self, driver):
+#         return _find_element(driver, self.locator)
+# 
+# def _element_if_visible(element, visibility=True):
+#     return element if element.is_displayed() == visibility else False
+# 
+# def _find_elements(driver, by):
+#     try:
+#         return driver.find_elemchromeOptionsents(*by)
+#     except WebDriverException as e:
+#         raise e
+# def _find_element(driver, by):
+#     """Looks up an element. Logs and re-raises ``WebDriverException``
+#     if thrown."""
+#     try:
+#         return driver.find_element(*by)
+#     except NoSuchElementException as e:
+#         raise e
+#     except WebDriverException as e:
+#         raise e
+# 
+# class wait_for_text_to_start_with(object):
+#     def __init__(self, locator, text_):
+#         self.locator = locator
+#         self.text = text_
+# 
+#     def __call__(self, driver):
+#         try:
+#             element_text = EC._find_element(driver, self.locator).text
+#             return element_text.startswith(self.text)
+# 
+#         except StaleElementReferenceException:
+#             return False
 
 class get_historical_data():
 
@@ -97,7 +101,6 @@ class get_historical_data():
         self.downloadPath = downloadPath
         
         # for Firefox
-        
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.folderList", 2)
         profile.set_preference("browser.download.manager.showWhenStarting", False)
@@ -116,7 +119,7 @@ class get_historical_data():
         # profile.set_preference("network.http.use-cache", False)
         # desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         # desiredCapabilities['firefox_profile'] = profile.encoded
-#        driver = webdriver.Firefox(capabilities=desiredCapabilities)
+        # driver = webdriver.Firefox(capabilities=desiredCapabilities)
         
         #  For Chrome
 #        options.headless = True
@@ -125,7 +128,7 @@ class get_historical_data():
         chromeOptions.add_experimental_option("prefs", {
              "download.default_directory" : self.downloadPath,
              'profile.default_content_setting_values.automatic_downloads': 2,
-             })
+              })
         chromeOptions.add_argument("--disable-user-media-security=true")
         chromeOptions.headless = True
         chromeOptions.add_argument('--disable-gpu') 
@@ -205,24 +208,43 @@ class get_historical_data():
 
         print "click at Historical Data Button"
         try:
-            elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
+            wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
         except TimeoutException:
             pass
-
         time.sleep(1)
 
-        input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
         print "click at input button"
-        input_elm.click()
+        time.sleep(1)
+        wait.until(EC.element_to_be_clickable((By.XPATH,"//span[@class='C($linkColor) Fz(14px)']"))).click()
+#        input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
+
+#        input_elm.click()
         time.sleep(1)
 
-        elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
-        print "click at max"
-        elm.click()
-        time.sleep(1)
+        # print "click at max"
+        # driver.find_element_by_xpath("//ul[2]/li[4]/button[@data-value='MAX']").click()
+        # time.sleep(1)
         # elm= driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/button")
         # elm.click()
+ #       /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/ul[1]/li[3]/button
+ #       /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/ul[2]/li[1]/button
+ 
+        # print "click at 1_D"
+        # driver.find_element_by_xpath("//ul[1]/li[1]/button[@data-value='1_D']").click()
+        # time.sleep(1)
         
+        # print "click at 5 Days"
+        # driver.find_element_by_xpath("//ul[1]/li[2]/button[@data-value='5_D']").click()
+        # time.sleep(1)
+        
+        # print "click at 3 Month"
+        # driver.find_element_by_xpath("//ul[1]/li[3]/button[@data-value='3_M']").click()
+        # time.sleep(1)
+        
+        print "click at 6 Month"
+        driver.find_element_by_xpath("//ul[1]/li[4]/button[@data-value='6_M']").click()
+        time.sleep(1)
+         
         print "clikc at Apply"
         # try:
         #     elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']"))).click()
@@ -233,26 +255,25 @@ class get_historical_data():
         time.sleep(5)
 
         print "click at download link"
-        a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
-
-        a_elm.click()
+        driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']").click()
+#        a_elm.click()
         time.sleep(3)
         driver.quit()
 
 def main():
 
     downloadPath = '/home/wchang/Downloads/data'
-    get_stock_data = get_historical_data("vgslx",  downloadPath)
-    get_stock_data = get_historical_data("aapl",  downloadPath)
-    get_stock_data = get_historical_data("goog",  downloadPath)
-    get_stock_data = get_historical_data("ibm",  downloadPath)
-    get_stock_data = get_historical_data("amzn",  downloadPath)
-    get_stock_data = get_historical_data("qai",  downloadPath)
-    get_stock_data = get_historical_data("bby",  downloadPath)
-    get_stock_data = get_historical_data("amd",  downloadPath)
-    get_stock_data = get_historical_data("box",  downloadPath)
-    get_stock_data = get_historical_data("fb",  downloadPath)
-    get_stock_data = get_historical_data("smci",  downloadPath)
+    get_stock_data = get_historical_data("vgstx",  downloadPath)
+    # get_stock_data = get_historical_data("aapl",  downloadPath)
+    # get_stock_data = get_historical_data("goog",  downloadPath)
+    # get_stock_data = get_historical_data("ibm",  downloadPath)
+    # get_stock_data = get_historical_data("amzn",  downloadPath)
+    # get_stock_data = get_historical_data("qai",  downloadPath)
+    # get_stock_data = get_historical_data("bby",  downloadPath)
+    # get_stock_data = get_historical_data("amd",  downloadPath)
+    # get_stock_data = get_historical_data("box",  downloadPath)
+    # get_stock_data = get_historical_data("fb",  downloadPath)
+    # get_stock_data = get_historical_data("smci",  downloadPath)
 
     # startDate = '6/28/2005'
     # endDate = '6/28/2018'
