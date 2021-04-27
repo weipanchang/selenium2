@@ -146,8 +146,7 @@ class get_historical_data():
 #                elm = driver.find_element_by_xpath("//ul[@class='f470fc71']")
                 stock_elm = driver.find_element_by_id('yfin-usr-qry')
                 stock_elm.clear()
-#                print "Found"
-#                stock_elm.send_keys(Keys.ENTER)
+
                 stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
                 time.sleep(2)
                 if stock_name.upper() in str(driver.current_url):
@@ -159,25 +158,6 @@ class get_historical_data():
 #                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
 #                time.sleep(2)
                 print "Yahoo search slow, will reloop!"
-
-            
-#         try:
-#              button_elm = driver.find_element_by_css_selector(".Z\(6\) > button:nth-child(3) > svg:nth-child(1)")
-#              print "click at x button "
-#              button_elm.click()
-#              time.sleep(1)
-#         except:
-#             pass
-# 
-#         try:
-# #                if button_elm.get_attribute("class") == "Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close":
-#             button_elm = driver.find_element_by_xpath("//button[@class = 'Bd(0) P(0) O(n):f D(ib) Fz(s) Fl(end) Mt(6px) Mend(8px) close']")
-#             print "click at x button"
-#             button_elm.click()
-#             time.sleep(1)
-# #           break
-#         except:
-#             pass
 
 
         print "click at Historical Data Button"
@@ -206,10 +186,7 @@ class get_historical_data():
             elm = wait.until(EC.element_to_be_clickable((By.XPATH, '//span[text()="Apply"]'))).click()
         except TimeoutException:
             pass
-#        button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']")
- 
 
-#        button_elm.click()
         time.sleep(5)
 
         a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")

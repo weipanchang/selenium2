@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as ET
 import requests, urllib3, sys
 
-import unittest
+# import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
@@ -113,13 +113,7 @@ def init_firefox(downloadPath):
     driver = webdriver.Firefox(capabilities=desiredCapabilities)
     driver.implicitly_wait(10)
     driver.set_page_load_timeout(20)
-    # url = "https://finance.yahoo.com"
-    # try:
-    #     driver.get(url)
-    # except TimeoutException:
-    #     pass
-    # print "Page is loaded"
-    # time.sleep(1)
+
     return driver
 
 def search_stock(driver, stock_name, wait):
@@ -139,10 +133,7 @@ def search_stock(driver, stock_name, wait):
 #       class="Bgc(t) Bd Bdrsbstart(2px)! Bdc(#b0b0b0) Bdendw(0) Bdrs(0) Bdrststart(2px)! Bxsh(n) Bxz(bb) D(b) Fz(15px) H(inh) M(0) O(0) Px(10px) W(100%) Bdc($c-fuji-blue-1-c):f Bdc(#949494):h finsrch-inpt"
        stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
        time.sleep(2)
-#       stock_elm.send_keys(Keys.ENTER)
-#       time.sleep(delay + 1)
-#       print str(driver.current_url)
-#           print str(stock_name.upper()), str(driver.current_url)
+
        if stock_name.upper() in str(driver.current_url):
            break
        else:
@@ -318,24 +309,18 @@ def click_download_link(driver):
     return None
 
 
-def main():
-
-    downloadPath = '/home/wchang/Downloads/data'
-    get_stock_data = get_historical_data("^NYA",  downloadPath)
-    get_stock_data = get_historical_data("^IXIC",  downloadPath)
-    # get_stock_data = get_historical_data("cost",  downloadPath)
-    # get_stock_data = get_historical_data("bby",  downloadPath)
-#    get_stock_data = get_historical_data("amd",  downloadPath)
-    # get_stock_data = get_historical_data("box",  downloadPath)
-    # get_stock_data = get_historical_data("fb",  downloadPath)
-    # get_stock_data = get_historical_data("smci",  downloadPath)
-
-    # startDate = '6/28/2005'
-    # endDate = '6/28/2018'
-    # get_stock_data = get_historical_data("amzn", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("adbe", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("aapl", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("goog", startDate, endDate, downloadPath)
-
-if __name__ == "__main__":
-    main()
+# def main():
+# 
+#     downloadPath = '/home/wchang/Downloads/data'
+#     get_stock_data = get_historical_data("^NYA",  downloadPath)
+#     get_stock_data = get_historical_data("^IXIC",  downloadPath)
+#     # get_stock_data = get_historical_data("cost",  downloadPath)
+#     # get_stock_data = get_historical_data("bby",  downloadPath)
+# 
+# 
+#     # startDate = '6/28/2005'
+#     # endDate = '6/28/2018'
+# 
+# 
+# if __name__ == "__main__":
+#     main()
