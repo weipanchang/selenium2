@@ -145,15 +145,16 @@ class get_historical_data():
                 time.sleep(delay + 1)
 #                elm = driver.find_element_by_xpath("//ul[@class='f470fc71']")
                 stock_elm = driver.find_element_by_id('yfin-usr-qry')
-                stock_elm.clear()
 
-                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
+
+                stock_elm.send_keys((self.stock_name.upper()) + (Keys.ENTER))
                 time.sleep(2)
-                if stock_name.upper() in str(driver.current_url):
+#                print self.stock_name.upper(), str(driver.current_url)
+                if self.stock_name.upper() in str(driver.current_url):
                     break
            
             except:
-#                stock_elm.clear()
+                stock_elm.clear()
 #                stock_elm.send_keys(stock_name.upper())
 #                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
 #                time.sleep(2)
@@ -200,21 +201,18 @@ def main():
 
     downloadPath = '/home/wchang/Downloads/data'
 
-    get_stock_data = get_historical_data("VTI",  downloadPath)
-    get_stock_data = get_historical_data("VIG",  downloadPath)
-    get_stock_data = get_historical_data("VYM",  downloadPath)
-    get_stock_data = get_historical_data("SCHD",  downloadPath)
-    get_stock_data = get_historical_data("vt",  downloadPath)
-    get_stock_data = get_historical_data("sdy",  downloadPath)
-    get_stock_data = get_historical_data("dvy",  downloadPath)
+    # get_stock_data = get_historical_data("VTI",  downloadPath)
+    # get_stock_data = get_historical_data("VIG",  downloadPath)
+    # get_stock_data = get_historical_data("VYM",  downloadPath)
+    # get_stock_data = get_historical_data("SCHD",  downloadPath)
+    # get_stock_data = get_historical_data("vt",  downloadPath)
+    # get_stock_data = get_historical_data("sdy",  downloadPath)
+    # get_stock_data = get_historical_data("dvy",  downloadPath)
 
-
-    # startDate = '6/28/2005'
-    # endDate = '6/28/2018'
-    # get_stock_data = get_historical_data("amzn", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("adbe", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("aapl", startDate, endDate, downloadPath)
-    # get_stock_data = get_historical_data("goog", startDate, endDate, downloadPath)
+    with open("stock_list.txt","r") as stock_input_file:
+        stock_symbols = stock_input_file.readlines()
+        for stock_symbol in stock_symbols:
+            get_stock_data = get_historical_data(stock_symbol.rstrip(),  downloadPath)
 
 if __name__ == "__main__":
     main()
