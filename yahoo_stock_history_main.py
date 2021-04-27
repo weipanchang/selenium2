@@ -66,10 +66,14 @@ def main():
 
     [start_max, end_max] = stock_history_function.get_max_period(driver)
 
-    if len(sys.argv) == 1 and startDate != "" and endDate !="":
-        if time.strptime(startDate, "%m/%d/%Y") > time.strptime(start_max, "%Y-%m-%d") \
-            or time.strptime(endDate, "%m/%d/%Y") < time.strptime(end_max, "%Y-%m-%d"):
-            stock_history_function.input_date(driver, startDate, endDate, start_max, end_max)
+    if len(sys.argv) == 1 and startDate != "" or endDate !="":
+        if startDate != "":
+            if time.strptime(startDate, "%m/%d/%Y") < time.strptime(start_max, "%Y-%m-%d"):
+                startDate = start_max
+        if endDate != "":
+            if time.strptime(endDate, "%m/%d/%Y") > time.strptime(end_max, "%Y-%m-%d"):
+                endDate = end_max
+        stock_history_function.input_date(driver, startDate, endDate, start_max, end_max)
         stock_history_function.click_done(driver)
     stock_history_function.click_apply(driver)
     stock_history_function.click_download_link(driver)

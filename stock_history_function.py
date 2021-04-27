@@ -203,8 +203,8 @@ def get_max_period(driver):
     max_period = input_elm.text.encode('ascii','ignore')
     print max_period
     [start_max, end_max] = [str(parse(i))[:10] for i in max_period.split("-")]
-    print start_max
-    print end_max
+#    print start_max
+#    print end_max
     time.sleep(1)
     return [start_max, end_max]
 
@@ -216,14 +216,17 @@ def input_date(driver, startDate, endDate, start_max, end_max):
 
     if startDate == "":
         startDate = start_max
+        print "using IPO date as start date input: " + end_max
     else:        
         startDate = str(datetime.datetime.strptime(startDate, "%m/%d/%Y").date())
-        print startDate
+#        print startDate
+
     if endDate == "":
         endDate = end_max
+        print "using cueent date as end date input: " + end_max
     else:
         endDate = str(datetime.datetime.strptime(endDate, "%m/%d/%Y").date())
-        print endDate
+#        print endDate
         
     if (startDate > start_max) and (end_max > startDate):
 
@@ -257,9 +260,9 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         print "Out of data range! Will display maximum possible data range with using default date as input: " + start_max
         
     time.sleep(1)
-
+    print "Input endDate: " + endDate
     if (end_max > endDate) and (start_max < endDate):
-        print "Input endDate: " + endDate
+#        print "Input endDate: " + endDate
         elm = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[1]/div[1]/div[1]/div/div/div/div/div/div[2]/input")
         elm.click()
         time.sleep(1)
@@ -282,10 +285,8 @@ def input_date(driver, startDate, endDate, start_max, end_max):
         actions.perform()
         actions.send_keys(endDateList[0])
         actions.perform()
-        
-         
 
-    elif (endDate_max == endDate) or (startDate_max == endDate):
+    elif (end_max == endDate) or (start_max == endDate):
         pass
     else:
         print "Out of data range! Will display maximum possible data range with using default date as input: " + end_max
@@ -295,7 +296,7 @@ def input_date(driver, startDate, endDate, start_max, end_max):
 def click_done(driver):
 
     button_elm = driver.find_element(By.XPATH,'//span[text()="Done"]')
-    #button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($linkColor) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($linkActiveColor):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start) Op(0.3)' ]")
+#    button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($linkColor) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($linkActiveColor):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Miw(80px)! Fl(start)' ]")
     print "click at Done"
     button_elm.click()
     time.sleep(3)

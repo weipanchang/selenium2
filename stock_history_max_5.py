@@ -263,7 +263,7 @@ class get_historical_data():
 def main():
 
     downloadPath = '/home/wchang/Downloads/data'
-    get_stock_data = get_historical_data("vgstx",  downloadPath)
+    get_stock_data = get_historical_data("VTI",  downloadPath)
     # get_stock_data = get_historical_data("aapl",  downloadPath)
     # get_stock_data = get_historical_data("goog",  downloadPath)
     # get_stock_data = get_historical_data("ibm",  downloadPath)

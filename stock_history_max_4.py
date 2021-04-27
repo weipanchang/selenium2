@@ -88,7 +88,7 @@ from selenium import webdriver
 #             element_text = EC._find_element(driver, self.locator).text
 #             return element_text.startswith(self.text)
 # 
-#         except StaleElementReferenceException:
+#         except StaleElem       stock_elm = driver.find_element_by_id('yfin-usr-qry')entReferenceException:
 #             return False
 
 class get_historical_data():
@@ -118,7 +118,7 @@ class get_historical_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         options = Options()
-        options.add_argument("--headless")
+#        options.add_argument("--headless")
 
         driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
         driver.implicitly_wait(10) # seconds
@@ -136,20 +136,27 @@ class get_historical_data():
         print "Yahoo finance Page is loaded"
 
         time.sleep(1)
-        stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
-        stock_elm.send_keys(stock_name.upper())
+#        stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
+#        stock_elm.send_keys(stock_name.upper())
         delay = 0
 #        time.sleep(delay + 1)
         while True:
             try:
                 time.sleep(delay + 1)
-                elm = driver.find_element_by_xpath("//ul[@class='f470fc71']")
+#                elm = driver.find_element_by_xpath("//ul[@class='f470fc71']")
+                stock_elm = driver.find_element_by_id('yfin-usr-qry')
 #                print "Found"
-                stock_elm.send_keys(Keys.ENTER)
-                break
+#                stock_elm.send_keys(Keys.ENTER)
+                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
+                time.sleep(2)
+                if stock_name.upper() in str(driver.current_url):
+                    break
+           
             except:
                 stock_elm.clear()
-                stock_elm.send_keys(stock_name.upper())
+#                stock_elm.send_keys(stock_name.upper())
+#                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
+#                time.sleep(2)
                 print "Yahoo search slow, will reloop!"
 
             
@@ -194,7 +201,8 @@ class get_historical_data():
         
         print "clikc at Apply"
         try:
-            elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']"))).click()
+#            elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']"))).click()
+            elm = wait.until(EC.element_to_be_clickable((By.XPATH, '//span[text()="Apply"]'))).click()
         except TimeoutException:
             pass
 #        button_elm = driver.find_element_by_xpath("//button[@class =' Bgc($c-fuji-blue-1-b) Bdrs(3px) Px(20px) Miw(100px) Whs(nw) Fz(s) Fw(500) C(white) Bgc($actionBlueHover):h Bd(0) D(ib) Cur(p) Td(n)  Py(9px) Fl(end)']")
@@ -214,16 +222,14 @@ def main():
 
     downloadPath = '/home/wchang/Downloads/data'
 
-    get_stock_data = get_historical_data("aapl",  downloadPath)
-    get_stock_data = get_historical_data("goog",  downloadPath)
-    get_stock_data = get_historical_data("ibm",  downloadPath)
-    get_stock_data = get_historical_data("amzn",  downloadPath)
-    get_stock_data = get_historical_data("qai",  downloadPath)
-    get_stock_data = get_historical_data("bby",  downloadPath)
-    get_stock_data = get_historical_data("amd",  downloadPath)
-    get_stock_data = get_historical_data("box",  downloadPath)
-    get_stock_data = get_historical_data("fb",  downloadPath)
-    get_stock_data = get_historical_data("smci",  downloadPath)
+    get_stock_data = get_historical_data("VTI",  downloadPath)
+    get_stock_data = get_historical_data("VIG",  downloadPath)
+    get_stock_data = get_historical_data("VYM",  downloadPath)
+    get_stock_data = get_historical_data("SCHD",  downloadPath)
+    get_stock_data = get_historical_data("vt",  downloadPath)
+    get_stock_data = get_historical_data("sdy",  downloadPath)
+    get_stock_data = get_historical_data("dvy",  downloadPath)
+
 
     # startDate = '6/28/2005'
     # endDate = '6/28/2018'
