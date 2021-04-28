@@ -6,6 +6,7 @@ Firefox version: 73.0 (64-bit)
 import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
+import re
 # from bs4 import BeautifulSoup
 # import unittest
 from selenium import webdriver
@@ -97,7 +98,7 @@ class get_historical_data():
     def __init__(self, stock_name, downloadPath):
         self.stock_name = stock_name
         print ""
-        print "Processing " + self.stock_name.upper() +" stock history data"
+#        print "Processing " + self.stock_name.upper() +" stock history data"
         self.downloadPath = downloadPath
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.folderList", 2)
@@ -192,6 +193,7 @@ class get_historical_data():
 
         a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
         print "click at download link"
+        print ('\n') *3
 
         a_elm.click()
         time.sleep(3)
@@ -209,10 +211,19 @@ def main():
     # get_stock_data = get_historical_data("sdy",  downloadPath)
     # get_stock_data = get_historical_data("dvy",  downloadPath)
 
-    with open("stock_list.txt","r") as stock_input_file:
+    with open("stock_list_2.txt","r") as stock_input_file:
         stock_symbols = stock_input_file.readlines()
+#        print stock_symbols
+        
         for stock_symbol in stock_symbols:
-            get_stock_data = get_historical_data(stock_symbol.rstrip(),  downloadPath)
+            print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
+            print "Processing " + stock_symbol.rstrip() +" stock history data"
+            print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
+            stock = re.search(('\(\w+\)'), stock_symbol)
+            # print stock.group()
+            # time.sleep(10000)
+            get_stock_data = get_historical_data(stock.group().rstrip().rstrip(')').lstrip('('),  downloadPath)
+
 
 if __name__ == "__main__":
     main()
