@@ -119,7 +119,7 @@ class get_historical_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         options = Options()
-#        options.add_argument("--headless")
+        options.add_argument("--headless")
 
         driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
         driver.implicitly_wait(10) # seconds
@@ -216,6 +216,9 @@ def main():
 #        print stock_symbols
         
         for stock_symbol in stock_symbols:
+            if len(stock_symbol) < 2:
+                continue
+                
             print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
             print "Processing " + stock_symbol.rstrip() +" stock history data"
             print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
