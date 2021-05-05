@@ -95,11 +95,12 @@ from selenium import webdriver
 class get_historical_data():
 
     #def __init__(self, stock_name, startDate, endDate, downloadPath):
-    def __init__(self, stock_name, downloadPath):
+    def __init__(self, stock_name, downloadPath, stock_or_fund):
         self.stock_name = stock_name
         print ""
 #        print "Processing " + self.stock_name.upper() +" stock history data"
         self.downloadPath = downloadPath
+        self.stock_or_fund = stock_or_fund
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.folderList", 2)
         profile.set_preference("browser.download.manager.showWhenStarting", False)
@@ -119,7 +120,7 @@ class get_historical_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         options = Options()
-        options.add_argument("--headless")
+#        options.add_argument("--headless")
 
         driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
         driver.implicitly_wait(10) # seconds
@@ -129,12 +130,17 @@ class get_historical_data():
 
 
         url = "https://finance.yahoo.com"
-        try:
-            driver.get(url)
-        except TimeoutException:
-            pass
+        while True:
+            try:
+                driver.get(url)
+                time.sleep(3)
+                print "Yahoo finance Page is loaded"
+                if 'finance' in str(driver.current_url):
+                    break
+            except TimeoutException:
+                pass
 
-        print "Yahoo finance Page is loaded"
+
 
         time.sleep(1)
 #        stock_elm = driver.find_element_by_xpath("//*[@id='yfin-usr-qry']")
@@ -142,14 +148,14 @@ class get_historical_data():
         delay = 0
 #        time.sleep(delay + 1)
         while True:
+            time.sleep(delay + 1)
             try:
                 time.sleep(delay + 1)
 #                elm = driver.find_element_by_xpath("//ul[@class='f470fc71']")
                 stock_elm = driver.find_element_by_id('yfin-usr-qry')
-
-
+                time.sleep(delay + 1)
                 stock_elm.send_keys((self.stock_name.upper()) + (Keys.ENTER))
-                time.sleep(2)
+                time.sleep(delay + 1)
 #                print self.stock_name.upper(), str(driver.current_url)
                 if self.stock_name.upper() in str(driver.current_url):
                     break
@@ -193,10 +199,74 @@ class get_historical_data():
 
         a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
         print "click at download link"
-        print ('\n') *3
-
         a_elm.click()
         time.sleep(3)
+        print ('\n')
+        
+        print "click at Stock Summary Button"
+        try:
+            elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Summary')]"))).click()
+        except Exception:
+            pass
+        time.sleep(1)
+        
+        if self.stock_or_fund == 'stock':
+            try:
+                elm = driver.find_element_by_xpath("//div[@class= 'Fw(b) Fl(end)--m Fz(s) C($primaryColor']").text
+#                <div class="Fw(b) Fl(end)--m Fz(s) C($primaryColor" data-reactid="189">Near Fair Value</div>
+            except Exception:
+                pass
+            print elm,
+            
+            try:
+                elm = driver.find_element_by_xpath("//span[@class= 'Trsdu(0.3s) ']").text
+#                <div class="Fw(b) Fl(end)--m Fz(s) C($primaryColor" data-reactid="189">Near Fair Value</div>
+            except Exception:
+                pass
+            print elm
+#        else:
+            # print "click at Fund Summary Button"
+            # try:
+            #     elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Summary')]"))).click()
+            # except Exception:
+            #     pass
+            # time.sleep(1)
+#            try:
+# /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/table/tbody/tr[2]/td[1]/span
+# //*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[1]/span
+            table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
+            list_elm = table_elm.find_elements_by_xpath('//*/tr[2]')
+     
+            for elm in list_elm:
+                if 'Beta (5Y Monthly)' in elm.text:
+                    print elm.text
+        else:
+#            //*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[1]/span
+            table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
+            list_elm = table_elm.find_elements_by_xpath('//*/tr[6]')
+            
+            for elm in list_elm:
+                # print elm.text
+                if 'Beta' in elm.text:
+                   print elm.text
+            table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
+            list_elm = table_elm.find_elements_by_xpath('//*/tr[2]')
+            for elm in list_elm:
+                # print elm.text
+                if 'Beta' in elm.text:
+                   print elm.text
+#                /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div[2]/div[2]/table/tbody/tr[6]/td[1]/span
+#                /html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div[2]/div[2]/table/tbody/tr[6]/td[2]
+#            //*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[1]/span/
+#           //*[@id="quote-summary"]/div[2]/table/tbody/tr[6]/td[2]/span
+#            except Exception:
+#                pass
+#            print elm
+            
+        print ('\n') *3
+#            <span class="Trsdu(0.3s) " data-reactid="173">571.99</span>
+
+
         driver.quit()
 
 def main():
@@ -212,20 +282,26 @@ def main():
     # get_stock_data = get_historical_data("dvy",  downloadPath)
 
     with open("stock_list_2.txt","r") as stock_input_file:
-        stock_symbols = stock_input_file.readlines()
-#        print stock_symbols
+        stock_fund_names = stock_input_file.readlines()
+#        print stock_fund_names
         
-        for stock_symbol in stock_symbols:
-            if len(stock_symbol) < 2:
+        for stock_fund_name in stock_fund_names:
+            if len(stock_fund_name) < 2:
                 continue
                 
-            print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
-            print "Processing " + stock_symbol.rstrip() +" stock history data"
-            print ("=") * len("Processing " + stock_symbol.rstrip() +" stock history data")
-            stock = re.search(('\(\w+\)'), stock_symbol)
+            print ("=") * len("Processing " + stock_fund_name.rstrip() +" history data")
+            print "Processing " + stock_fund_name.rstrip() +" history data"
+            print ("=") * len("Processing " + stock_fund_name.rstrip() +" history data")
+            stock = re.search(('\(\w+\)'), stock_fund_name)
+            is_stock =  re.search("ETF|Fund",stock_fund_name)
+#            print is_stock
+            if is_stock:
+                stock_or_fund =  'Fund'
+            else:
+                stock_or_fund ='stock'
             # print stock.group()
             # time.sleep(10000)
-            get_stock_data = get_historical_data(stock.group().rstrip().rstrip(')').lstrip('('),  downloadPath)
+            get_stock_data = get_historical_data(stock.group().rstrip().rstrip(')').lstrip('('),  downloadPath, stock_or_fund)
 
 
 if __name__ == "__main__":
