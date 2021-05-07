@@ -2,7 +2,7 @@
 """
 Firefox version: 73.0 (64-bit)
 """
-import xml.etree.ElementTree as ET
+#import xml.etree.ElementTree as ET
 #import urllib2
 import requests, urllib3, sys
 import re
@@ -56,7 +56,7 @@ class get_historical_data():
         driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
         driver.implicitly_wait(10) # seconds
         driver.set_page_load_timeout(10)
-        wait = WebDriverWait(driver, 120, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
+        wait = WebDriverWait(driver, 100, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
         url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
 
         url = "https://finance.yahoo.com"
@@ -143,7 +143,7 @@ class get_historical_data():
                     break
 
             except:
-                driver.get(url)
+#                driver.get(url)
                 driver.delete_all_cookies()
 
                 print "Yahoo search slow, will reloop!"        # try:
@@ -158,14 +158,14 @@ class get_historical_data():
 
             except Exception:
                 pass
-            print elm,
-
-            try:
-                elm = driver.find_element_by_xpath("//span[@class= 'Trsdu(0.3s) ']").text
-
-            except Exception:
-                pass
             print elm
+
+#             try:
+#                 elm = driver.find_element_by_xpath("//span[@class= 'Trsdu(0.3s) ']").text
+# #               //*[@id="fr-val-mod"]/div[2]/div[2]
+#             except Exception:
+#                 pass
+#             print elm
 
             table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
             list_elm = table_elm.find_elements_by_xpath('//*/tr[2]')
@@ -173,6 +173,14 @@ class get_historical_data():
             for elm in list_elm:
                 if 'Beta (5Y Monthly)' in elm.text:
                     print elm.text
+                    
+            list_elm = table_elm.find_elements_by_xpath('//*/tr[8]')
+
+            for elm in list_elm:
+                if '1y Target Est' in elm.text:
+                    print elm.text
+            print (driver.find_element_by_xpath('//*[@id="chrt-evts-mod"]/div[2]/div[1]/span[1]/span').text)
+#//*[@id="chrt-evts-mod"]/div[2]/div[1]/span[1]/span
         else:
 
             table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
