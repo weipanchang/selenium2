@@ -51,21 +51,22 @@ class get_historical_data():
         desiredCapabilities = DesiredCapabilities.FIREFOX.copy()
         desiredCapabilities['firefox_profile'] = profile.encoded
         options = Options()
-        options.add_argument("--headless")
+#        options.add_argument("--headless")
 
         driver = webdriver.Firefox(capabilities=desiredCapabilities, firefox_options=options)
-        driver.implicitly_wait(10) # seconds
+#        driver.implicitly_wait(10) # seconds
         driver.set_page_load_timeout(10)
         wait = WebDriverWait(driver, 100, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException])
-        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
+#        url = "https://finance.yahoo.com/quote/" + self.stock_name + "?p=" + self.stock_name + "&.tsrc=fin-srch"
 
         url = "https://finance.yahoo.com"
         while True:
             try:
                 driver.get(url)
                 driver.delete_all_cookies()
-                time.sleep(delay + 1)
-                print "Yahoo finance Page is loaded"
+                driver.implicitly_wait(15)
+#                time.sleep(delay + 1)
+                print ("Yahoo finance Page is loaded")
                 if 'finance' in str(driver.current_url):
                     break
             except TimeoutException:
@@ -81,24 +82,25 @@ class get_historical_data():
             try:
                 time.sleep(delay + 1)
                 driver.get(url_stock)
+                driver.implicitly_wait(15)
                 # stock_elm = driver.find_element_by_id('yfin-usr-qry')
                 # time.sleep(delay + 1)
 #                stock_elm.send_keys((self.stock_name.upper()) + (Keys.ENTER))
-                time.sleep(delay + 2)
-#                print self.stock_name.upper(), str(driver.current_url)
+                time.sleep(delay + 1)
+#                print (self.stock_name.upper(), str(driver.current_url))
                 if self.stock_name.upper() in str(driver.current_url):
                     break
 
-            except:
-                driver.get(url)
-                driver.delete_all_cookies()
+            except TimeoutException:
+ #               driver.get(url)
+ #               driver.delete_all_cookies()
 #                stock_elm.send_keys(stock_name.upper())
 #                stock_elm.send_keys((stock_name.upper()) + (Keys.ENTER))
 #                time.sleep(2)
-                print "Yahoo search slow, will reloop!"
+                print ("Yahoo page slow, will reloop!")
 
 
-        print "Display Historical Data Page"
+        print ("Display Historical Data Page")
         try:
             elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Historical Data')]"))).click()
         except TimeoutException:
@@ -107,16 +109,16 @@ class get_historical_data():
         time.sleep(delay + 1)
 
         input_elm = driver.find_element_by_xpath("//span[@class='C($linkColor) Fz(14px)']")
-        print "click at input button"
+        print ("click at input button")
         input_elm.click()
         time.sleep(delay + 1)
 
         elm = driver.find_element_by_xpath("//li[4]/button[@data-value='MAX']")
-        print "click at max"
+        print ("click at max")
         elm.click()
         time.sleep(delay + 1)
 
-        print "clikc at Apply"
+        print ("clikc at Apply")
         try:
             elm = wait.until(EC.element_to_be_clickable((By.XPATH, '//span[text()="Apply"]'))).click()
         except TimeoutException:
@@ -125,20 +127,20 @@ class get_historical_data():
         time.sleep(delay + 3)
 
         a_elm = driver.find_element_by_xpath("//a[@class = 'Fl(end) Mt(3px) Cur(p)']")
-        print "click at download link"
+        print ("click at download link")
         a_elm.click()
         time.sleep(delay + 3)
         print ('\n')
 
-        print "Display Summary Page"
+        print ("Display Summary Page")
         while True:
 #            time.sleep(delay + 1)
             try:
                 time.sleep(delay + 1)
                 driver.get(url_stock)
-
-                time.sleep(delay + 3)
-#                print self.stock_name.upper(), str(driver.current_url)
+                driver.implicitly_wait(15)
+                time.sleep(delay + 1)
+#                print (self.stock_name.upper(), str(driver.current_url))
                 if self.stock_name.upper() in str(driver.current_url):
                     break
 
@@ -146,11 +148,13 @@ class get_historical_data():
 #                driver.get(url)
                 driver.delete_all_cookies()
 
-                print "Yahoo search slow, will reloop!"        # try:
+                print ("Yahoo slow, will reloop!")
+        # try:
         #     elm = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Summary')]"))).click()
         # except Exception:
         #     pass
         # time.sleep(1)
+        print ('Current Price:   %s' % (driver.find_element_by_xpath('//*[@id="quote-header-info"]/div[3]/div[1]/div/span[1]').text.encode('utf-8')))
 
         if self.stock_or_fund == 'stock':
             try:
@@ -158,29 +162,29 @@ class get_historical_data():
 
             except Exception:
                 pass
-            print elm
+            print ("%s," % (elm.encode('utf-8'))) 
 
 #             try:
 #                 elm = driver.find_element_by_xpath("//span[@class= 'Trsdu(0.3s) ']").text
 # #               //*[@id="fr-val-mod"]/div[2]/div[2]
 #             except Exception:
 #                 pass
-#             print elm
+#             print (elm)
 
             table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
             list_elm = table_elm.find_elements_by_xpath('//*/tr[2]')
 
             for elm in list_elm:
                 if 'Beta (5Y Monthly)' in elm.text:
-                    print elm.text
+                    print( elm.text)
                     
             list_elm = table_elm.find_elements_by_xpath('//*/tr[8]')
 
             for elm in list_elm:
                 if '1y Target Est' in elm.text:
-                    print elm.text
+                    print (elm.text)
             print (driver.find_element_by_xpath('//*[@id="chrt-evts-mod"]/div[2]/div[1]/span[1]/span').text)
-#//*[@id="chrt-evts-mod"]/div[2]/div[1]/span[1]/span
+#                    //*[@id="quote-summary"]/div[2]/table/tbody/tr[8]/td[1]/span
         else:
 
             table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
@@ -189,22 +193,25 @@ class get_historical_data():
             for elm in list_elm:
 
                 if 'Beta' in elm.text:
-                   print elm.text
+                   print (elm.text)
             table_elm = driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody')
             list_elm = table_elm.find_elements_by_xpath('//*/tr[2]')
             for elm in list_elm:
 
                 if 'Beta' in elm.text:
-                   print elm.text
+                   print (elm.text)
+            if stock_or_fund == 'ELF':
+                print (driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[1]/span').text, )
+                print (driver.find_element_by_xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[2]/span').text)
 
-        print ('\n') *3
+        print ('\n' *3) 
 
         driver.quit()
 
 def main():
 
-    downloadPath = '/home/wchang/Downloads/data'
-
+    downloadPath = "~/Downloads/data"
+    
     # get_stock_data = get_historical_data("VTI",  downloadPath)
     # get_stock_data = get_historical_data("VIG",  downloadPath)
     # get_stock_data = get_historical_data("VYM",  downloadPath)
@@ -221,14 +228,17 @@ def main():
             if len(stock_fund_name) < 2:
                 continue
 
-            print ("=") * len("Processing " + stock_fund_name.rstrip() +" history data")
-            print "Processing " + stock_fund_name.rstrip() +" history data"
-            print ("=") * len("Processing " + stock_fund_name.rstrip() +" history data")
+            print (("=") * len("Processing " + stock_fund_name.rstrip() +" history data"))
+            print ("Processing " + stock_fund_name.rstrip() +" history data")
+            print (("=") * len("Processing " + stock_fund_name.rstrip() +" history data"))
             stock = re.search(('\(\w+\)'), stock_fund_name)
             is_stock =  re.search("ETF|Fund",stock_fund_name)
 #            print is_stock
             if is_stock:
-                stock_or_fund =  'Fund'
+                if 'Fund' in stock_fund_name:
+                    stock_or_fund =  'Fund'
+                else:
+                    stock_or_fund = 'ELF'
             else:
                 stock_or_fund ='stock'
             # print stock.group()
