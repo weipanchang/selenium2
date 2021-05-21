@@ -154,7 +154,7 @@ class get_historical_data():
         # except Exception:
         #     pass
         # time.sleep(1)
-        print ('Current Price:   %s' % (driver.find_element_by_xpath('//*[@id="quote-header-info"]/div[3]/div[1]/div/span[1]').text.encode('utf-8')))
+        print ('Current Price:   %s' % (driver.find_element_by_xpath('//*[@id="quote-header-info"]/div[3]/div[1]/div/span[1]').text.decode('utf-8')))
 
         if self.stock_or_fund == 'stock':
             try:
@@ -162,7 +162,7 @@ class get_historical_data():
 
             except Exception:
                 pass
-            print ("%s," % (elm.encode('utf-8'))) 
+            print ("%s," % (elm.decode('utf-8'))) 
 
 #             try:
 #                 elm = driver.find_element_by_xpath("//span[@class= 'Trsdu(0.3s) ']").text
